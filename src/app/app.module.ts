@@ -7,12 +7,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import {DropdownModule} from "ng2-bootstrap";
 import {NavComponent} from "./nav/nav.component";
+import {HeaderComponent} from "./header/header.component";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent
+    NavComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
