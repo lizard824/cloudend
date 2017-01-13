@@ -8,13 +8,17 @@ import { HttpModule } from '@angular/http';
 import {DropdownModule} from "ng2-bootstrap";
 import {NavComponent} from "./nav/nav.component";
 import {HeaderComponent} from "./header/header.component";
+import {UserComponent} from "./user/user.component";
+import {DomainComponent} from "./domain/domain.component";
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    HeaderComponent
+    HeaderComponent,
+    UserComponent,
+    DomainComponent
   ],
   imports: [
     BrowserModule,

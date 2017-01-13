@@ -9,8 +9,8 @@
 
     <ul class="namul" role="menuitem">
       <li class="active" role="menuitem">
-        <a href="javascript:;">
-          <img src="../assets/images/user.png" alt="">
+        <a routerLink="/user" routerLinkActive="active">
+          <img src="../../assets/images/user.png" alt="">
           <p>
             User
           </p>
@@ -50,13 +50,14 @@
         </li>-->
       <li role="menuitem">
         <a href="javascript:;">
-          <img src="../assets/images/doma.png" alt="">
+          <img src="../../assets/images/doma.png" alt="">
           <p>
             Domain
           </p>
         </a>
       </li>
     </ul>
+    <router-outlet></router-outlet>
   </div>
 </div>
 
