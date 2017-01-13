@@ -1,0 +1,70 @@
+.manage .formtop {
+     margin-top: 20px;
+}
+.manage .manlab {
+	width:100%;
+	height:63px;
+	padding-top: 6px;
+	overflow: hidden;	
+	border-bottom: 1px solid #ccdad5;
+}
+.manage .manlab-font{
+	font-size: 16px;
+	color:#363636;
+}
+.manage .manlab .lab-sex{
+	position: relative;
+	top:-20px;
+}
+.manage .manlab input{
+	height:50px;
+	padding-top: 15px;
+	padding-bottom:15px;
+	background: rgba(0,0,0,0);
+	outline: none;
+	border:none;
+	color:#bfbfbd;
+}
+.manage .manlab label{
+	padding-top: 12px;
+}
+.manage .manlab input[type=text],
+.manage .manlab .sex-right
+{
+	width:85%;
+	float: right;
+}
+.manage .manlab #sex-right{
+	margin-left: 20px;
+}
+.manage .manlab input[type=radio] {
+    /*margin-left: 78px;*/
+}
+
+.manage .manbtn{
+	padding:8px 30px 13px 30px;
+	text-align: center;
+	background:#ccdad5 ;
+	outline: none;
+	border:none;
+	border-radius: 10px;
+	font-size: 24px;
+	display: block;
+	margin:0 auto;
+	margin-top: 30px;
+	cursor: pointer;
+}
+@media(max-width: 1199){
+	.manage .manlab input[type=text]{
+	width:70%;
+	float: right;
+    }
+}
+@media (max-width: 570px){
+	.manage .manlab input[type=text],
+     .manage .manlab .sex-right
+	{
+	width:70%;
+	float: right;
+}
+}
