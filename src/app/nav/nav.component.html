@@ -1,5 +1,5 @@
 <!-- left start  -->
-<div class="dropdown" dropdown>
+<!--<div class="dropdown" dropdown>
   <div class="icon-list icon-large" id="single-button" dropdownToggle></div>
   <div class="namleft" dropdownMenu role="menu" aria-labelledby="single-button" style="clear:both;float:none;">
     <ul class="namul" role="menuitem">
@@ -11,7 +11,7 @@
           </p>
         </a>
       </li>
-      <!--  <li role="menuitem">
+      &lt;!&ndash;  <li role="menuitem">
           <a href="javascript:;">
             <img src="../assets/images/task.png" alt="">
             <p>
@@ -42,9 +42,9 @@
               The background registration
             </p>
           </a>
-        </li>-->
+        </li>&ndash;&gt;
       <li role="menuitem">
-        <a href="javascript:;">
+        <a routerLink="/domain" routerLinkActive="active">
           <img src="../../assets/images/doma.png" alt="">
           <p>
             Domain
@@ -52,21 +52,15 @@
         </a>
       </li>
     </ul>
-    <router-outlet></router-outlet>
   </div>
-</div>
+</div>-->
 
 
 <div class="namleft leftaway">
-  <div class="namtop">
-    <p class="namone">Welcome</p>
-    <p class="namtwo">Satoshi</p>
-  </div>
-
   <ul class="namul">
-    <li class="active">
-      <a href="javascript:;">
-        <img src="../assets/images/user.png" alt="">
+    <li [routerLinkActive]="['activenav']">
+      <a routerLink="/user" routerLinkActive="active">
+        <img src="../../assets/images/user.png" alt="">
         <p>
           User
         </p>
@@ -104,9 +98,9 @@
          </p>
        </a>
      </li>-->
-    <li>
-      <a href="javascript:;">
-        <img src="../assets/images/doma.png" alt="">
+    <li [routerLinkActive]="['activenav']">
+      <a routerLink="/domain" routerLinkActive="active">
+        <img src="../../assets/images/doma.png" alt="">
         <p>
           Domain
         </p>

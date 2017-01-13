@@ -118,7 +118,7 @@ body{
 	width:100%;
 	height:80px;
 }
-.manage .namleft .namul .active {
+.manage .namleft .namul .activenav {
 	background: #d8e5e1;
 	border-left: 3px solid #b2a292;
 	-moz-box-sizing:border-box;
