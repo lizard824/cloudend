@@ -8,10 +8,6 @@ import {Router } from '@angular/router';
   selector: 'left-nav',
   templateUrl: './nav.component.html'
 })
-export class NavComponent implements OnInit{
-  constructor(private router: Router) { }
-
-  ngOnInit() {
-    this.router.navigate(["/user"]);
-  }
+export class NavComponent{
+  
 }
