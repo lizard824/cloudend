@@ -76,7 +76,7 @@ body{
 }
 .manage .manhead  .mancen .xopear {
 	float: right;
-	width:30%;
+	width:25%;
 	height:30px;
 	overflow: hidden;
 }
@@ -172,7 +172,7 @@ body{
 		font-size: 16px;
 	}
 	.manage .manhead  .mancen .xopear{
-    width:40%;
+    width:35%;
 		font-size: 16px;
 	}
 
