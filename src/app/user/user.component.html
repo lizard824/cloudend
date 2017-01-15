@@ -1,6 +1,8 @@
 <div class="user">
   <div class="m-earh">
-    <input type="text" value="please enter the account you want search" id="mearh">
+    <input type="text" id="mearh"
+           required
+           [(ngModel)]="username" name="username" placeholder="Please enter the username">
     <span class="earhimg">
          <img src="../../assets/images/m-earh.png" alt="">
      </span>
@@ -9,195 +11,27 @@
   <table  class="mantable table">
     <tr class="table-bj">
       <td>
-        Name
+       Username
       </td>
       <td>
-        Account
+        Authtype
       </td>
       <td>
-        Time
+        Last Login Time
       </td>
       <td>
         Operation
       </td>
     </tr>
-    <tr>
+    <tr *ngFor="let item of userList;let odd = odd" [ngClass]="{'tr-bj':odd}">
       <td>
-        catcat
+        {{item.username}}
       </td>
       <td>
-        152163451
+        {{userType(item.authtype)}}
       </td>
       <td>
-        2016.12.22 17:26
-      </td>
-      <td>
-        <i class="icon-trash"></i>
-      </td>
-    </tr>
-    <tr class="tr-bj">
-      <td>
-        catcat
-      </td>
-      <td>
-        152163451
-      </td>
-      <td>
-        2016.12.22 17:26
-      </td>
-      <td>
-        <i class="icon-trash"></i>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        catcat
-      </td>
-      <td>
-        152163451
-      </td>
-      <td>
-        2016.12.22 17:26
-      </td>
-      <td>
-        <i class="icon-trash"></i>
-      </td>
-    </tr>
-    <tr class="tr-bj">
-      <td>
-        catcat
-      </td>
-      <td>
-        152163451
-      </td>
-      <td>
-        2016.12.22 17:26
-      </td>
-      <td>
-        <i class="icon-trash"></i>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        catcat
-      </td>
-      <td>
-        152163451
-      </td>
-      <td>
-        2016.12.22 17:26
-      </td>
-      <td>
-        <i class="icon-trash"></i>
-      </td>
-    </tr>
-    <tr class="tr-bj">
-      <td>
-        catcat
-      </td>
-      <td>
-        152163451
-      </td>
-      <td>
-        2016.12.22 17:26
-      </td>
-      <td>
-        <i class="icon-trash"></i>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        catcat
-      </td>
-      <td>
-        152163451
-      </td>
-      <td>
-        2016.12.22 17:26
-      </td>
-      <td>
-        <i class="icon-trash"></i>
-      </td>
-    </tr>
-    <tr class="tr-bj">
-      <td>
-        catcat
-      </td>
-      <td>
-        152163451
-      </td>
-      <td>
-        2016.12.22 17:26
-      </td>
-      <td>
-        <i class="icon-trash"></i>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        catcat
-      </td>
-      <td>
-        152163451
-      </td>
-      <td>
-        2016.12.22 17:26
-      </td>
-      <td>
-        <i class="icon-trash"></i>
-      </td>
-    </tr>
-    <tr class="tr-bj">
-      <td>
-        catcat
-      </td>
-      <td>
-        152163451
-      </td>
-      <td>
-        2016.12.22 17:26
-      </td>
-      <td>
-        <i class="icon-trash"></i>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        catcat
-      </td>
-      <td>
-        152163451
-      </td>
-      <td>
-        2016.12.22 17:26
-      </td>
-      <td>
-        <i class="icon-trash"></i>
-      </td>
-    </tr>
-    <tr class="tr-bj">
-      <td>
-        catcat
-      </td>
-      <td>
-        152163451
-      </td>
-      <td>
-        2016.12.22 17:26
-      </td>
-      <td>
-        <i class="icon-trash"></i>
-      </td>
-    </tr>
-    <tr class="tr-bj">
-      <td>
-        catcat
-      </td>
-      <td>
-        152163451
-      </td>
-      <td>
-        2016.12.22 17:26
+        {{item.lastlogintime}}
       </td>
       <td>
         <i class="icon-trash"></i>
@@ -205,28 +39,6 @@
     </tr>
   </table>
   <!-- page start-->
-  <div class="manmargin">
-    <nav>
-      <ul class="pagination pagination-sm">
-        <li>
-          <a href="javascript:;">
-            total:<span id="totals">1200</span>
-          </a>
-        </li>
-        <li><a href="javascript:;">
-          page <span id="pagenum">1</span>/<span id="pageall">12</span>
-        </a>
-        </li>
-        <li><a href="javascript:;">First</a></li>
-        <li><a href="javascript:;">&laquo;</a></li>
-
-        <li><a href="javascript:;">1</a></li>
-
-        <li><a href="javascript:;">&raquo;</a></li>
-        <li><a href="javascript:;">Last</a></li>
-      </ul>
-    </nav>
-
-  </div>
+  <pagination-customize [totalItems]="totalItems" [currentPage]="currentPage"></pagination-customize>
   <!--page end  -->
 </div>

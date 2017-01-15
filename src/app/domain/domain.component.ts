@@ -8,4 +8,6 @@ import {Component} from '@angular/core';
   templateUrl: './domain.component.html'
 })
 export class DomainComponent {
+  currentPage:number = 2;
+  totalItems:number = 200;
 }

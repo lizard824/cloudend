@@ -164,28 +164,6 @@
     </tr>
   </table>
   <!-- page start -->
-  <div class="manmargin">
-    <nav>
-      <ul class="pagination pagination-sm">
-        <li>
-          <a href="javascript:;">
-            total:<span id="totals">1200</span>
-          </a>
-        </li>
-        <li><a href="javascript:;">
-          page <span id="pagenum">1</span>/<span id="pageall">12</span>
-        </a>
-        </li>
-        <li><a href="javascript:;">First</a></li>
-        <li><a href="javascript:;">&laquo;</a></li>
-
-        <li><a href="javascript:;">1</a></li>
-
-        <li><a href="javascript:;">&raquo;</a></li>
-        <li><a href="javascript:;">Last</a></li>
-      </ul>
-    </nav>
-
-  </div>
+  <pagination-customize [totalItems]="totalItems" [currentPage]="currentPage"></pagination-customize>
   <!--page end  -->
 </div>
