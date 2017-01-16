@@ -97,33 +97,31 @@
 	margin: 24px 0;
 	float: right;
 }
-.manage .m-doma #sysnam{
-	width:30%;
-	height:100%;
+.manage .xopform{
+  width:100%;
+  height:30px;
+  overflow: hidden;
+}
+.manage .xopform label{
+  float: left;
+  font-size:16px;
+  color:#d7d0c7;
+}
+.manage .m-doma #sysnam,
+.manage .m-doma #domnam
+{
+  float: right;
+  width:50%;
+  height:100%;
 	font-size:16px;
-	float: left;
-	margin-right: 40px;
 	color:#d7d0c7;
-	padding:8px 0 8px 15px;
+	padding:0 0 8px 0;
 	background: rgba(0,0,0,0);
 	border:none;
 	outline: none;
-	border:1px solid #b2a292;
-	border-radius: 20px;
+
 }
-.manage .m-doma #domnam{
-	width:40%;
-	height:100%;
-	font-size:16px;
-	float: left;
-	color:#d7d0c7;
-	padding:8px 0 8px 15px;
-	background: rgba(0,0,0,0);
-	border:none;
-	outline: none;
-	border:1px solid #b2a292;
-	border-radius: 20px;
-}
+
 .manage .m-doma .domimg{
 	width:75px;
 	height:100%;
@@ -135,6 +133,23 @@
 }
 .manage .m-doma .domimg img{
 	padding:3px 20px;
+}
+.manage .xopsub{
+  width:56px;
+  height:26px;
+  font-size:14px;
+  color:#898989;
+  background:#ccdad5;
+  border:none;
+  outline:none;
+  margin:auto;
+  border-radius:4px;
+  display: block;
+  margin-top:10px;
+
+}
+.modal-header{
+  border:none;
 }
 /*添加*/
 
@@ -173,15 +188,15 @@
     .manage .m-doma {
     	width:100%;
     }
-    .manage .m-doma #sysnam {
-    	width:35%;
-    	margin-right: 10px;
-    	font-size: 14px;
-    }
-    .manage .m-doma #domnam {
-    	width:35%;
-    	font-size: 14px;
-    }
+    /*.manage .m-doma #sysnam {*/
+    	/*width:35%;*/
+    	/*margin-right: 10px;*/
+    	/*font-size: 14px;*/
+    /*}*/
+    /*.manage .m-doma #domnam {*/
+    	/*width:35%;*/
+    	/*font-size: 14px;*/
+    /*}*/
     .manage .m-doma .domimg {
     	width:60px;
         display: block;

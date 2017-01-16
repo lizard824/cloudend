@@ -1,7 +1,6 @@
 <div class="domain">
   <div class="m-doma">
-    <!--<input type="text" value="System Name" id="sysnam">-->
-    <!--<input type="text" value="Domain Name " id="domnam">-->
+
     <div class="m-earh">
       <input type="text" id="mearh"
              required
@@ -11,9 +10,39 @@
      </span>
 
     </div>
-    <span class="domimg">
+    <span class="domimg" (click)="staticModal.show()">
          <img src="../../assets/images/clicadd.png" alt="">
      </span>
+
+
+    <div class="modal fade" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static'}"
+         tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+
+            <button type="button" class="close pull-right" aria-label="Close" (click)="staticModal.hide()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="xopform">
+              <label>System Name:</label>
+              <input type="text" value="System Name" id="sysnam">
+            </div>
+            <div class="xopform">
+              <label>Domain Name:</label>
+              <input type="text" value="Domain Name " id="domnam">
+            </div>
+
+               <button type="submit" class="xopsub" id="xopsub">Submit</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
   </div>
 
   <table  class="mantable table">

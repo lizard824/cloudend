@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
-import {DropdownModule, PaginationModule} from "ng2-bootstrap";
+import {DropdownModule, PaginationModule,  ModalModule} from "ng2-bootstrap";
 import {NavComponent} from "./nav/nav.component";
 import {HeaderComponent} from "./header/header.component";
 import {UserComponent} from "./user/user.component";
@@ -30,6 +30,7 @@ import {PaginationCustomizeComponent} from "./shared/component/pagination.custom
     HttpModule,
     DropdownModule.forRoot(),
     PaginationModule.forRoot(),
+    ModalModule.forRoot(),
     RouterModule.forRoot(rootRouterConfig, { useHash: true })
   ],
   providers: [
