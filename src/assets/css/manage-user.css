@@ -20,11 +20,16 @@
 	width:100%;
 	height:auto;
 	text-align: center;
-	margin-top: 20px;	
+	margin-top: 20px;
 	box-shadow: 0 0 10px rgba(0,0,0,0.2)
 }
  .manage .manmargin{
  	float: right;
+ }
+ .manage pre{
+   float: left;
+   margin:19px;
+   padding:5px;
  }
  .manage .manmargin .pagination li a{
  	color:#3e3e3e;
@@ -32,7 +37,7 @@
  	border:none;
  }
   .manage .manmargin .pagination li a:hover{
-  	  background: #f2f2f2;	
+  	  background: #f2f2f2;
   }
 .manage .mantable tr {
     width:100%;
@@ -52,10 +57,9 @@
 
 /*搜索*/
 .manage .m-earh{
-	width:65%;
+	width:80%;
 	height:40px;
-	margin: 24px 0;
-	float: right;
+	float: left;
 	overflow: hidden;
 	border-radius: 20px;
 	border:1px solid #b2a292;
@@ -88,7 +92,7 @@
 
 /*添加*/
 .manage .m-doma{
-	width:65%;
+	width:60%;
 	height:40px;
 	margin: 24px 0;
 	float: right;
@@ -139,11 +143,17 @@
 @media (min-width: 760px) and (max-width:1199px) {
 
      .manage .m-doma {
-    	width:90%;
+    	width:80%;
     }
+  .manage .m-earh{
+    width:73%;
+  }
     .manage .manmargin .pagination{
-    	
     	margin:0;
+    }
+    .manage pre{
+      margin:0 10px;
+      padding:4px;
     }
 }
 @media (max-width: 759px){
@@ -158,7 +168,7 @@
      }
 
     .manage .m-earh{
-    	width:100%;
+    	width:80%;
     }
     .manage .m-doma {
     	width:100%;
@@ -171,7 +181,7 @@
     .manage .m-doma #domnam {
     	width:35%;
     	font-size: 14px;
-    } 
+    }
     .manage .m-doma .domimg {
     	width:60px;
         display: block;
@@ -182,4 +192,8 @@
     .manage .pagination{
     	margin:0 auto;
     }
+  .manage pre{
+    margin:0 10px;
+    padding:3px;
+  }
 }

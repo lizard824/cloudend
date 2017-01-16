@@ -84,11 +84,11 @@ body{
       font-size: 18px;
       color:#898989;
       line-height: 25px;
-      float: left;
-      margin-left: 2%;
+      float: right;
     }
 .manage .manhead  .mancen .xopear #xopinp{
 	float: right;
+  margin-left: 10%;
 }
 
 /*head end*/
@@ -104,7 +104,7 @@ body{
 .manage .namleft {
 	padding:20px 0 80px 0;
 	background: #ccdad5;
-	width:27%;
+	width:20%;
 	float: left;
 }
 
@@ -145,7 +145,7 @@ body{
 /*left end*/
 /*right start*/
 .manage .manright {
-  width:70%;
+  width:76%;
   float: right;
 }
 .manage .manbtn{
@@ -177,19 +177,27 @@ body{
 	}
 
 	.manage .namleft{
+    width:25%;
 		padding:20px 0 40px 0;
 	}
 	.manage .namleft .namul {
 		height:100%;
+    margin-top:0;
 	}
-	.manage .namleft .namul li a {
+
+  .manage .namleft .namul li{
+    height:60px;
+  }
+  .manage .namleft .namul li a {
 		font-size: 14px;
 	}
 	.manage .namleft .namul li a img {
         width:21px;
         height:22px;
 	}
-
+  .manage .manright {
+    width:73%;
+  }
 }
 @media (max-width:759px){
 	.manage {
