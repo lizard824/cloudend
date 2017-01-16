@@ -8,10 +8,11 @@ import { HttpModule } from '@angular/http';
 import {DropdownModule, PaginationModule,  ModalModule} from "ng2-bootstrap";
 import {NavComponent} from "./nav/nav.component";
 import {HeaderComponent} from "./header/header.component";
-import {UserComponent} from "./user/user.component";
+import {UserListComponent} from "./user/user-list/user-list.component";
 import {DomainComponent} from "./domain/domain.component";
 import {UserService} from "./shared/user.service";
 import {PaginationCustomizeComponent} from "./shared/component/pagination.customize.component";
+import {UserFormComponent} from "./user/user-form/user-form.component";
 
 
 @NgModule({
@@ -19,9 +20,10 @@ import {PaginationCustomizeComponent} from "./shared/component/pagination.custom
     AppComponent,
     NavComponent,
     HeaderComponent,
-    UserComponent,
+    UserListComponent,
     DomainComponent,
-    PaginationCustomizeComponent
+    PaginationCustomizeComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,

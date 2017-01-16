@@ -2,13 +2,13 @@
  * Created by duanxc1 on 1/13/2017.
  */
 import {Component, OnInit} from '@angular/core';
-import {UserService} from "../shared/user.service";
+import {UserService} from "../../shared/user.service";
 
 @Component({
-  selector: 'user',
-  templateUrl: './user.component.html'
+  selector: 'user-list',
+  templateUrl: './user-list.component.html'
 })
-export class UserComponent implements OnInit{
+export class UserListComponent implements OnInit{
   currentPage:number = 4;
   totalItems:number = 120;
   userList:Array<User> = [
