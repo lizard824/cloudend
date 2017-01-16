@@ -57,7 +57,7 @@
 
 /*搜索*/
 .manage .m-earh{
-	width:80%;
+	width:70%;
 	height:40px;
 	float: left;
 	overflow: hidden;
@@ -92,7 +92,7 @@
 
 /*添加*/
 .manage .m-doma{
-	width:60%;
+	width:50%;
 	height:40px;
 	margin: 24px 0;
 	float: right;
@@ -143,10 +143,10 @@
 @media (min-width: 760px) and (max-width:1199px) {
 
      .manage .m-doma {
-    	width:80%;
+    	width:75%;
     }
   .manage .m-earh{
-    width:73%;
+    width:70%;
   }
     .manage .manmargin .pagination{
     	margin:0;
