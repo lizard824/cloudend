@@ -97,30 +97,13 @@
 	margin: 24px 0;
 	float: right;
 }
-.manage .xopform{
-  width:100%;
-  height:30px;
-  overflow: hidden;
-}
-.manage .xopform label{
-  float: left;
-  font-size:16px;
-  color:#d7d0c7;
-}
-.manage .m-doma #sysnam,
-.manage .m-doma #domnam
-{
-  float: right;
-  width:50%;
-  height:100%;
-	font-size:16px;
-	color:#d7d0c7;
-	padding:0 0 8px 0;
-	background: rgba(0,0,0,0);
-	border:none;
-	outline: none;
 
+.manage .xopform {
+  font-size:14px;
+  clear:both;
+  color:#FF4242;
 }
+
 
 .manage .m-doma .domimg{
 	width:75px;
@@ -135,21 +118,10 @@
 	padding:3px 20px;
 }
 .manage .xopsub{
-  width:56px;
-  height:26px;
-  font-size:14px;
-  color:#898989;
   background:#ccdad5;
-  border:none;
-  outline:none;
-  margin:auto;
-  border-radius:4px;
-  display: block;
-  margin-top:10px;
-
 }
-.modal-header{
-  border:none;
+.modal-header .close{
+  margin-top:-23px;
 }
 /*添加*/
 

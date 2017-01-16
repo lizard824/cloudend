@@ -17,25 +17,41 @@
 
     <div class="modal fade" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static'}"
          tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-sm">
+      <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-
+            <h4 class="modal-title">Add</h4>
             <button type="button" class="close pull-right" aria-label="Close" (click)="staticModal.hide()">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <div class="xopform">
-              <label>System Name:</label>
-              <input type="text" value="System Name" id="sysnam">
-            </div>
-            <div class="xopform">
-              <label>Domain Name:</label>
-              <input type="text" value="Domain Name " id="domnam">
-            </div>
+            <form role="form" class="form-horizontal">
+              <div class="form-group">
 
-               <button type="submit" class="xopsub" id="xopsub">Submit</button>
+                  <label class="col-sm-3 text-left control-label">System Name:</label>
+                  <div class=" col-sm-12">
+                    <input type="text" value="System Name" class="form-control" id="sysnam">
+                  </div>
+
+                <p class="xopform col-sm-8">The name wrong</p>
+              </div>
+              <div class="form-group">
+
+                  <label class="col-sm-3 text-left control-label">Domain Name:</label>
+                <div class=" col-sm-12">
+                  <input type="text" class="form-control" value="Domain Name " id="domnam">
+                </div>
+                <p class="xopform col-sm-8">The name wrong</p>
+              </div>
+              <div class="divider"></div>
+              <div class="form-group">
+                <div class="col-sm-offset-5 col-sm-5">
+                  <button type="submit" class="btn btn-default xopsub">Submit</button>
+                </div>
+              </div>
+            </form>
+
 
           </div>
         </div>
