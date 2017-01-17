@@ -6,25 +6,25 @@
    margin:19px;
    padding:5px;
  }
- .manmargin .m-pagination li a{
- 	color:#3e3e3e;
- 	background: #ccdad5;
- 	border:none;
+ .manmargin #m-pagination li a{
+ 	color:#3e3e3e !important;
+ 	background: #ccdad5 !important;
+ 	border:none !important;
  }
-.manmargin .m-pagination li a:hover{
-  	  background: #f2f2f2;
+.manmargin #m-pagination li a:hover{
+  	  background: #f2f2f2 !important;
   }
 @media(min-width: 760px){
-.manmargin .m-pagination{
-    	margin:0;
+.manmargin #m-pagination{
+    	margin:0 !important;
     }
 
-.manmargin .m-pagination li a{
-        font-size: 0.3rem;
-        padding: 4px 4px;
+.manmargin #m-pagination li a{
+        font-size: 0.3rem !important;
+        padding: 4px 4px !important;
 	}
-.m-pagination{
-    	margin:0 auto;
+#m-pagination{
+    	margin:0 auto !important;
     }
  pre{
     margin:0 10px;
