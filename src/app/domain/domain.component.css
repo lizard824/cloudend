@@ -1,10 +1,10 @@
 
 
-.manage .font-color {
+.font-color {
 	font-size: 16px;
 	color:#3e3e3e;
 }
-.manage .checkbox-style {
+.checkbox-style {
 	width:13px;
 	height:13px;
 	display: block;
@@ -16,47 +16,32 @@
 
 /*table start*/
 
-.manage .mantable{
+.mantable{
 	width:100%;
 	height:auto;
 	text-align: center;
 	margin-top: 20px;
 	box-shadow: 0 0 10px rgba(0,0,0,0.2)
 }
- .manage .manmargin{
- 	float: right;
- }
- .manage pre{
-   float: left;
-   margin:19px;
-   padding:5px;
- }
- .manage .manmargin .pagination li a{
- 	color:#3e3e3e;
- 	background: #ccdad5;
- 	border:none;
- }
-  .manage .manmargin .pagination li a:hover{
-  	  background: #f2f2f2;
-  }
-.manage .mantable tr {
+
+.mantable tr {
     width:100%;
 }
-.manage .table-bj {
+.table-bj {
 	background: #ccdad5;
 }
-.manage .table-w {
+.table-w {
     background:#fff;
 }
-.manage .tr-bj {
+.tr-bj {
 	background: #f2f2f2;
 }
-.manage .text-left {
+.text-left {
 	text-align: left;
 }
 
 /*搜索*/
-.manage .m-earh{
+.m-earh{
 	width:70%;
 	height:40px;
 	float: left;
@@ -64,7 +49,7 @@
 	border-radius: 20px;
 	border:1px solid #b2a292;
 }
-.manage .m-earh #mearh{
+.m-earh #mearh{
 	width:70%;
 	height:100%;
 	font-size:16px;
@@ -76,7 +61,7 @@
     float: left;
 
 }
-.manage .m-earh .earhimg{
+.m-earh .earhimg{
 	width:75px;
 	height:100%;
 	display: block;
@@ -84,28 +69,28 @@
 	float: right;
 	cursor: pointer;
 }
-.manage .m-earh .earhimg img{
+.m-earh .earhimg img{
 	padding:3px 20px;
 }
 /*搜索*/
 
 
 /*添加*/
-.manage .m-doma{
+.m-doma{
 	width:50%;
 	height:40px;
 	margin: 24px 0;
 	float: right;
 }
 
-.manage .xopform {
+.xopform {
   font-size:14px;
   clear:both;
   color:#FF4242;
 }
 
 
-.manage .m-doma .domimg{
+.m-doma .domimg{
 	width:75px;
 	height:100%;
 	display: block;
@@ -114,10 +99,10 @@
 	border-radius: 20px;
 	cursor: pointer;
 }
-.manage .m-doma .domimg img{
+.m-doma .domimg img{
 	padding:3px 20px;
 }
-.manage .xopsub{
+.xopsub{
   background:#ccdad5;
 }
 .modal-header .close{
@@ -129,58 +114,38 @@
 /*table end*/
 @media (min-width: 760px) and (max-width:1199px) {
 
-     .manage .m-doma {
-    	width:75%;
+.m-doma {
+    width:75%;
     }
-  .manage .m-earh{
+.m-earh{
     width:70%;
   }
-    .manage .manmargin .pagination{
-    	margin:0;
-    }
-    .manage pre{
+
+pre{
       margin:0 10px;
       padding:4px;
     }
 }
 @media (max-width: 759px){
 
-	.manage .manmargin .pagination li a{
-        font-size: 0.3rem;
-        padding: 4px 4px;
-	}
 
-     .manage .font-color {
+.font-color {
      	font-size: 0.3rem;
      }
 
-    .manage .m-earh{
+.m-earh{
     	width:80%;
     }
-    .manage .m-doma {
+.m-doma {
     	width:100%;
     }
-    /*.manage .m-doma #sysnam {*/
-    	/*width:35%;*/
-    	/*margin-right: 10px;*/
-    	/*font-size: 14px;*/
-    /*}*/
-    /*.manage .m-doma #domnam {*/
-    	/*width:35%;*/
-    	/*font-size: 14px;*/
-    /*}*/
-    .manage .m-doma .domimg {
+
+.m-doma .domimg {
     	width:60px;
         display: block;
     }
-    .manage .m-doma .domimg img{
+.m-doma .domimg img{
     	padding:3px 12px;
     }
-    .manage .pagination{
-    	margin:0 auto;
-    }
-  .manage pre{
-    margin:0 10px;
-    padding:3px;
-  }
+
 }

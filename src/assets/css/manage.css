@@ -31,10 +31,7 @@ body{
 	background: #fff;
 	font-family: '微软雅黑','黑体';
 }
-
-
-
- .manage {
+.manage {
  	clear: both;
  	height:auto !important;
  	height:700px;
@@ -45,104 +42,12 @@ body{
  	background: #f9f8f4;
 
  }
-
- /*head start*/
- .manage .manhead {
- 	padding:20px 40px 20px 40px;
- 	margin:0 auto;
- 	background:#f9f8f4;
-    -webkit-box-shadow:0 0 15px rgba(0,0,0,0.2);
- 	-moz-box-shadow:0 0 15px rgba(0,0,0,0.2);
- 	box-shadow:0 0 15px rgba(0,0,0,0.2);
- 	position: relative;
- 	z-index: 1;
- 	clear: both;
- }
-.manage .manhead .mancen {
-	width:100%;
-	height:30px;
-}
-.manage .manhead .mancen img{
-	float: left;
-	margin-right: 15px;
-}
-.manage .manhead .mancen .manp {
-	float: left;
-    width:50%;
-    height:100%;
-    line-height: 25px;
-	font-size: 22px;
-	color:#898989;
-}
-.manage .manhead  .mancen .xopear {
-	float: right;
-	width:25%;
-	height:30px;
-	overflow: hidden;
-}
-    .manage .manhead  .mancen .xopear p{
-      font-size: 18px;
-      color:#898989;
-      line-height: 25px;
-      float: right;
-    }
-.manage .manhead  .mancen .xopear #xopinp{
-	float: right;
-  margin-left: 10%;
-}
-
-/*head end*/
 .manage .percen{
 	width:100%;
 	height:700px;
 	clear: both;
 }
-/*left start*/
-.manage .dropdown{
-	display: none;
-}
-.manage .namleft {
-	padding:20px 0 80px 0;
-	background: #ccdad5;
-	width:20%;
-	float: left;
-}
 
-.manage .namleft .namul {
-	margin-top: 26px;
-	width:100%;
-	height:480px;
-
-}
-.manage .namleft .namul li {
-	width:100%;
-	height:80px;
-}
-.manage .namleft .namul .activenav {
-	background: #d8e5e1;
-	border-left: 3px solid #b2a292;
-	-moz-box-sizing:border-box;
-	-webkit-box-sizing:border-box;
-	-ms-box-sizing:border-box;
-	box-sizing:border-box;
-}
-.manage .namleft .namul li a {
-	font-size: 20px;
-	color:#898989;
-}
-.manage .namleft .namul li a img {
-	float: left;
-	margin-left: 25px;
-	margin-top: 22px;
-}
-.manage .namleft .namul li a p {
-	width:70%;
-	height:20px;
-	float: right;
-	padding-top: 28px;
-	padding-right: 10px;
-}
-/*left end*/
 /*right start*/
 .manage .manright {
   width:76%;
@@ -165,91 +70,24 @@ body{
 
 /*right end*/
 @media (max-width:1199px) {
-	.manage{
-		padding: 20px 5% 70px 5%;
-	}
-	.manage .manhead .mancen .manp {
-		font-size: 16px;
-	}
-	.manage .manhead  .mancen .xopear{
-    width:35%;
-		font-size: 16px;
-	}
+.manage{
+	padding: 20px 5% 70px 5%;
+	}	
 
-	.manage .namleft{
-    width:25%;
-		padding:20px 0 40px 0;
-	}
-	.manage .namleft .namul {
-		height:100%;
-    margin-top:0;
-	}
 
-  .manage .namleft .namul li{
-    height:60px;
-  }
-  .manage .namleft .namul li a {
-		font-size: 14px;
-	}
-	.manage .namleft .namul li a img {
-        width:21px;
-        height:22px;
-	}
-  .manage .manright {
+.manage .manright {
     width:73%;
   }
 }
 @media (max-width:759px){
-	.manage {
-		padding: 20px 4% 70px 4%;
+.manage {
+	padding: 20px 4% 70px 4%;
 	}
-	 .manage .manhead{
-	 	padding:10px 20px 10px 20px;
-	 }
-	.manage .namleft .namul li a p{
-		width:75%;
-		font-size: 0.3rem;
-		padding-top: 0.4rem;
-		padding-right:0;
-	}
-	.manage .namleft .namul li a img {
-		width:0.525rem;
-		height:0.55rem;
-		margin-left: 0.25rem;
-		margin-top: 0.5rem;
-	}
-	.manage .manhead .mancen .manp {
-		width:63%;
-		font-size: 0.3rem;
-	}
-	.manage .manhead  .mancen .xopear #xopinp{
-		font-size: 0.3rem;
-	}
-    .manage .namleft .namul{
-    	margin-top: 0.5rem;
-    }
-    .manage .namleft .namul li{
-    	height:1.5rem;
-    }
-
-
-    .manage .dropdown {
-    	display: block;
-    	margin-top:0.5rem;
-    }
-
-
-    .manage .leftaway {
-    	display: none;
-    }
-
-     .manage .manright {
-     	width:100%;
-     	float: none;
+.manage .manright {
+    width:100%;
+    float: none;
      }
-     .manage .manleft {
-     	width:26%;
-     }
+
 
 
 }

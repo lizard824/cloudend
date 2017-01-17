@@ -1,0 +1,146 @@
+
+
+.font-color {
+	font-size: 16px;
+	color:#3e3e3e;
+}
+.checkbox-style {
+	width:13px;
+	height:13px;
+	display: block;
+	cursor: pointer;
+	background: #f9f8f4;
+	border:1px solid #959595;
+}
+
+
+/*table start*/
+
+ .mantable{
+	width:100%;
+	height:auto;
+	text-align: center;
+	margin-top: 20px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.2)
+}
+
+.mantable tr {
+    width:100%;
+}
+.table-bj {
+	background: #ccdad5;
+}
+.table-w {
+    background:#fff;
+}
+.tr-bj {
+	background: #f2f2f2;
+}
+.text-left {
+	text-align: left;
+}
+
+/*搜索*/
+.m-earh{
+	width:70%;
+	height:40px;
+	float: left;
+	overflow: hidden;
+	border-radius: 20px;
+	border:1px solid #b2a292;
+}
+.m-earh #mearh{
+	width:70%;
+	height:100%;
+	font-size:16px;
+	color:#d7d0c7;
+	padding:8px 0 8px 15px;
+	background: rgba(0,0,0,0);
+	border:none;
+	outline: none;
+    float: left;
+
+}
+.m-earh .earhimg{
+	width:75px;
+	height:100%;
+	display: block;
+	background:#b2a292 ;
+	float: right;
+	cursor: pointer;
+}
+.m-earh .earhimg img{
+	padding:3px 20px;
+}
+/*搜索*/
+
+
+/*添加*/
+.m-doma{
+	width:50%;
+	height:40px;
+	margin: 24px 0;
+	float: right;
+}
+
+.xopform {
+  font-size:14px;
+  clear:both;
+  color:#FF4242;
+}
+
+
+.m-doma .domimg{
+	width:75px;
+	height:100%;
+	display: block;
+	background:#b2a292 ;
+	float: right;
+	border-radius: 20px;
+	cursor: pointer;
+}
+.m-doma .domimg img{
+	padding:3px 20px;
+}
+.xopsub{
+  background:#ccdad5;
+}
+.modal-header .close{
+  margin-top:-23px;
+}
+/*添加*/
+
+
+/*table end*/
+@media (min-width: 760px) and (max-width:1199px) {
+
+.m-doma {
+    	width:75%;
+    }
+.m-earh{
+    width:70%;
+  }
+}
+@media (max-width: 759px){
+
+
+.font-color {
+     	font-size: 0.3rem;
+     }
+
+.m-earh{
+    	width:80%;
+    }
+.m-doma {
+    	width:100%;
+    }
+
+.m-doma .domimg {
+    	width:60px;
+        display: block;
+    }
+.m-doma .domimg img{
+    	padding:3px 12px;
+    }
+
+}

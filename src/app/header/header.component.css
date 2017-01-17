@@ -1,0 +1,67 @@
+ /*head start*/
+ .manhead {
+ 	padding:20px 40px 20px 40px;
+ 	margin:0 auto;
+ 	background:#f9f8f4;
+    -webkit-box-shadow:0 0 15px rgba(0,0,0,0.2);
+ 	-moz-box-shadow:0 0 15px rgba(0,0,0,0.2);
+ 	box-shadow:0 0 15px rgba(0,0,0,0.2);
+ 	position: relative;
+ 	z-index: 1;
+ 	clear: both;
+ }
+ .manhead .mancen {
+	width:100%;
+	height:30px;
+}
+ .manhead .mancen img{
+	float: left;
+	margin-right: 15px;
+}
+ .manhead .mancen .manp {
+	float: left;
+    width:50%;
+    height:100%;
+    line-height: 25px;
+	font-size: 22px;
+	color:#898989;
+}
+ .manhead  .mancen .xopear {
+	float: right;
+	width:25%;
+	height:30px;
+	overflow: hidden;
+}
+    .manhead  .mancen .xopear p{
+      font-size: 18px;
+      color:#898989;
+      line-height: 25px;
+      float: right;
+    }
+ .manhead  .mancen .xopear #xopinp{
+	float: right;
+  margin-left: 10%;
+}
+
+/*head end*/
+@media(max-width: 1199px){
+	 .manhead .mancen .manp {
+		font-size: 16px;
+	}
+	.manhead  .mancen .xopear{
+    width:35%;
+		font-size: 16px;
+	}
+}
+@media(max-width: 759px){
+		  .manhead{
+	 	padding:10px 20px 10px 20px;
+	 }
+	 	 .manhead .mancen .manp {
+		width:63%;
+		font-size: 0.3rem;
+	}
+	 .manhead  .mancen .xopear #xopinp{
+		font-size: 0.3rem;
+	}
+}

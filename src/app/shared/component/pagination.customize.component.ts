@@ -6,7 +6,8 @@ import {Input} from "@angular/core/src/metadata/directives";
 
 @Component({
   selector: 'pagination-customize',
-  templateUrl: './pagination.customize.component.html'
+  templateUrl: './pagination.customize.component.html',
+  styleUrls: ['pagination.customize.component.css']
 })
 export class PaginationCustomizeComponent{
   @Input() totalItems: number;

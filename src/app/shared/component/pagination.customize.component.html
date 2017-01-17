@@ -1,6 +1,6 @@
 <!-- page start-->
 <div class="manmargin">
-  <pagination [boundaryLinks]="true" [(ngModel)]="currentPage" class="pagination-sm" [totalItems]="totalItems"
+  <pagination [boundaryLinks]="true" [(ngModel)]="currentPage" class="m-pagination pagination-sm" [totalItems]="totalItems"
               previousText="&laquo;" nextText="&raquo;" firstText="First" lastText="Last" [maxSize]="maxSize" [itemsPerPage]="itemsPerPage" (numPages)="numPages= $event"></pagination>
   <pre class="card card-block card-header">Page: {{currentPage}} / {{numPages}} Total: {{totalItems}}</pre>
 </div>
