@@ -1,0 +1,61 @@
+<form class="form-horizontal formtop" [formGroup]="userAddFormGroup">
+  <div class="manlab manlab-font">
+    <label>Username：</label>
+    <input type="text" name="username" formControlName="username">
+  </div>
+  <div *ngIf="formErrors.username" class="alert alert-danger">
+    {{ formErrors.username }}
+  </div>
+  <div class="manlab manlab-font">
+    <label>Realname：</label>
+    <input type="text" name="realname" formControlName="realname">
+  </div>
+  <div *ngIf="formErrors.realname" class="alert alert-danger">
+    {{ formErrors.realname }}
+  </div>
+  <div class="manlab manlab-font">
+    <label>Telephone：</label>
+    <input type="text"  name="mobilephone" formControlName="mobilephone">
+  </div>
+  <div *ngIf="formErrors.mobilephone" class="alert alert-danger">
+    {{ formErrors.mobilephone}}
+  </div>
+  <div class="manlab manlab-font">
+    <label>Email：</label>
+    <input type="text" name="email" formControlName="email">
+  </div>
+  <div *ngIf="formErrors.email" class="alert alert-danger">
+    {{ formErrors.email }}
+  </div>
+  <div class="manlab manlab-font">
+    <label>Gender：</label>
+    <span class="sex-right">
+             <input type="radio" name="sex" formControlName="sex" value="1">
+             <label class="lab-sex">Woman</label>
+             <input type="radio" name="sex" formControlName="sex" value="0">
+             <label class="lab-sex">Man</label>
+            </span>
+  </div>
+  <div *ngIf="formErrors.sex" class="alert alert-danger">
+    {{ formErrors.sex}}
+  </div>
+  <div class="manlab manlab-font">
+    <label>Password：</label>
+    <input type="password" name="password" formControlName="password">
+  </div>
+  <div *ngIf="formErrors.password" class="alert alert-danger">
+    {{ formErrors.password }}
+  </div>
+  <div class="manlab manlab-font">
+    <label>Confirm：</label>
+    <input type="password" name="confirmPassword" formControlName="confirmPassword">
+  </div>
+  <div *ngIf="formErrors.confirmPassword" class="alert alert-danger">
+    {{ formErrors.confirmPassword }}
+  </div>
+  <alert *ngIf="error" type="warning">
+    <strong>Warning! </strong>{{error}}
+  </alert>
+  <button type="submit" class="btn manbtn" [disabled]="!userAddFormGroup.valid" (click)="save()">Save</button>
+  <button type="reset" class="btn manbtn" (click)="reset()">Reset</button>
+</form>

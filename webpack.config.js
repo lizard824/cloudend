@@ -88,11 +88,11 @@ var defaultConfig = {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
       "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
-    }, proxy: {
+    },  proxy: {
       '/api/*': {
-        //target: 'http://earth-t.xpaas.lenovo.com',
         target: 'http://localhost:8080',
-        secure: false
+        secure: false,
+        pathRewrite: {"^/api" : ""}
       }
     }
   },

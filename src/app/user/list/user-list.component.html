@@ -3,16 +3,15 @@
 
     <div class="m-earh">
       <input type="text" id="mearh"
-             required
-             [(ngModel)]="username" name="username" placeholder="Please enter the username">
+             [(ngModel)]="user.username" name="username" placeholder="Please enter the username" (keyup)="search('')">
     <span class="earhimg">
-         <img src="../../../assets/images/m-earh.png" alt="">
+         <a (click)="search('')"><img src="../../../assets/images/m-earh.png" alt=""></a>
      </span>
 
     </div>
 
     <span class="domimg">
-         <a routerLink="/user/form" routerLinkActive="active"><img src="../../../assets/images/clicadd.png" alt=""></a>
+         <a routerLink="/user/add" routerLinkActive="active"><img src="../../../assets/images/clicadd.png" alt=""></a>
      </span>
 
   </div>
@@ -41,7 +40,7 @@
         {{userType(item.authtype)}}
       </td>
       <td>
-        {{item.lastlogintime}}
+        {{item.lastlogintime | date:'y-MM-dd HH:mm:ss'}}
       </td>
       <td>
         <i class="icon-trash"></i>
@@ -49,6 +48,6 @@
     </tr>
   </table>
   <!-- page start-->
-  <pagination-customize [totalItems]="totalItems" [currentPage]="currentPage"></pagination-customize>
+  <pagination-customize [page]="page" (search)="search($event)"></pagination-customize>
   <!--page end  -->
 </div>

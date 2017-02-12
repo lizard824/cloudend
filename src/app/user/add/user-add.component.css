@@ -5,7 +5,7 @@
 	width:100%;
 	height:63px;
 	padding-top: 6px;
-	overflow: hidden;	
+	overflow: hidden;
 	border-bottom: 1px solid #ccdad5;
 }
 .manlab-font{
@@ -29,6 +29,7 @@
 	padding-top: 12px;
 }
 .manlab input[type=text],
+.manlab input[type=password],
 .manlab .sex-right
 {
 	width:85%;
@@ -52,7 +53,7 @@
 	margin-top: 30px;
 	cursor: pointer;
 }
-@media(max-width: 1199){
+@media(max-width: 1199px){
 .manlab input[type=text]{
 	width:70%;
 	float: right;

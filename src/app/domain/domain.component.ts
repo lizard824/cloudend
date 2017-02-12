@@ -9,6 +9,5 @@ import {Component} from '@angular/core';
   styleUrls:['domain.component.css']
 })
 export class DomainComponent {
-  currentPage:number = 2;
-  totalItems:number = 200;
+
 }

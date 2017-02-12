@@ -5,14 +5,15 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
-import {DropdownModule, PaginationModule,  ModalModule} from "ng2-bootstrap";
+import {DropdownModule, PaginationModule, ModalModule, AlertModule} from "ng2-bootstrap";
 import {NavComponent} from "./nav/nav.component";
 import {HeaderComponent} from "./header/header.component";
-import {UserListComponent} from "./user/user-list/user-list.component";
+import {UserListComponent} from "./user/list/user-list.component";
 import {DomainComponent} from "./domain/domain.component";
 import {UserService} from "./shared/user.service";
 import {PaginationCustomizeComponent} from "./shared/component/pagination.customize.component";
-import {UserFormComponent} from "./user/user-form/user-form.component";
+import {UserAddFormComponent} from "./user/add/user-add.component";
+import {HttpService} from "./shared/http.service";
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import {UserFormComponent} from "./user/user-form/user-form.component";
     UserListComponent,
     DomainComponent,
     PaginationCustomizeComponent,
-    UserFormComponent
+    UserAddFormComponent
   ],
   imports: [
     BrowserModule,
@@ -33,10 +34,12 @@ import {UserFormComponent} from "./user/user-form/user-form.component";
     DropdownModule.forRoot(),
     PaginationModule.forRoot(),
     ModalModule.forRoot(),
+    AlertModule.forRoot(),
     RouterModule.forRoot(rootRouterConfig, { useHash: true })
   ],
   providers: [
-    UserService
+    UserService,
+    HttpService
   ],
   bootstrap: [ AppComponent ]
 })
