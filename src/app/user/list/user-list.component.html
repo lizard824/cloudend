@@ -43,7 +43,7 @@
         {{item.lastlogintime | date:'y-MM-dd HH:mm:ss'}}
       </td>
       <td>
-        <a routerLink="user/edit" routerLinkActive="active"><i class="icon-edit"></i></a>
+        <a [routerLink]="['user/edit',item.id]" routerLinkActive="active"><i class="icon-edit"></i></a>
         <a (click)="del(item.id)"><i class="icon-trash"></i></a>
       </td>
     </tr>

@@ -14,6 +14,7 @@ import {UserService} from "./shared/user.service";
 import {PaginationCustomizeComponent} from "./shared/component/pagination.customize.component";
 import {UserAddFormComponent} from "./user/add/user-add.component";
 import {HttpService} from "./shared/http.service";
+import {UserEditFormComponent} from "./user/edit/user-edit.component";
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {HttpService} from "./shared/http.service";
     UserListComponent,
     DomainComponent,
     PaginationCustomizeComponent,
-    UserAddFormComponent
+    UserAddFormComponent,
+    UserEditFormComponent
   ],
   imports: [
     BrowserModule,

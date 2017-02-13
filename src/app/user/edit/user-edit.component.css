@@ -1,0 +1,80 @@
+.formtop {
+  margin-top: 20px;
+}
+.manlab {
+  width:100%;
+  height:63px;
+  padding-top: 6px;
+  overflow: hidden;
+  border-bottom: 1px solid #ccdad5;
+}
+.manlab-font{
+  font-size: 16px;
+  color:#363636;
+}
+.manlab .lab-sex{
+  position: relative;
+  top:-20px;
+}
+.manlab input{
+  height:50px;
+  padding-top: 15px;
+  padding-bottom:15px;
+  background: rgba(0,0,0,0);
+  outline: none;
+  border:none;
+  color:#bfbfbd;
+}
+.manlab label{
+  padding-top: 12px;
+}
+.manlab input[type=text],
+.manlab input[type=password],
+.manlab .sex-right
+{
+  width:85%;
+  float: right;
+}
+.manlab #sex-right{
+  margin-left: 20px;
+}
+
+.man-add-btn{
+  width:50%;
+  height:63px;
+  margin:0 auto;
+}
+.manbtn{
+  padding:8px 30px 13px 30px;
+  text-align: center;
+  background:#ccdad5 ;
+  outline: none;
+  border:none;
+  border-radius: 10px;
+  font-size: 24px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+.man-add-btn button[type=submit]{
+  float: left;
+}
+.man-add-btn button[type=reset]{
+  float: right;
+}
+.alert{
+  padding:5px;
+}
+@media(max-width: 1199px){
+  .manlab input[type=text]{
+    width:70%;
+    float: right;
+  }
+}
+@media (max-width: 570px){
+  .manlab input[type=text],
+  .manlab .sex-right
+  {
+    width:70%;
+    float: right;
+  }
+}
