@@ -110,6 +110,9 @@
 }
 /*添加*/
 
+.user-list-dele{
+  margin-left:10px;
+}
 
 /*table end*/
 @media (min-width: 760px) and (max-width:1199px) {
