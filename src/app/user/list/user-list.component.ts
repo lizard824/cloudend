@@ -39,6 +39,14 @@ export class UserListComponent implements OnInit {
     });
   }
 
+  del(id){
+    let idList:Array<Number>=[];
+    idList[0] = id;
+    this.http.post("/api/user/del",{"idList[]":idList}).subscribe((res:any)=>{
+
+    });
+  }
+
   userType(type: number) {
     return this.userService.userType(type);
   }
