@@ -39,7 +39,11 @@
 	margin-left: 20px;
 }
 
-
+.man-add-btn{
+	width:50%;
+	height:63px;
+	margin:0 auto;
+}
 .manbtn{
 	padding:8px 30px 13px 30px;
 	text-align: center;
@@ -48,10 +52,17 @@
 	border:none;
 	border-radius: 10px;
 	font-size: 24px;
-	display: block;
-	margin:0 auto;
 	margin-top: 30px;
 	cursor: pointer;
+}
+.man-add-btn button[type=submit]{
+	float: left;
+}
+.man-add-btn button[type=reset]{
+	float: right;
+}
+.alert{
+	padding:5px;
 }
 @media(max-width: 1199px){
 .manlab input[type=text]{
