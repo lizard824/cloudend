@@ -1,28 +1,28 @@
 <form class="form-horizontal formtop" [formGroup]="userEditFormGroup">
   <div class="manlab manlab-font">
     <label>Username：</label>
-    <input type="text" name="username" formControlName="username">
+    <input type="text" name="username" formControlName="username" [(ngModel)]="user.username" readonly="true">
   </div>
   <div *ngIf="formErrors.username" class="alert alert-danger">
     {{ formErrors.username }}
   </div>
   <div class="manlab manlab-font">
     <label>Realname：</label>
-    <input type="text" name="realname" formControlName="realname">
+    <input type="text" name="realname" formControlName="realname" [(ngModel)]="user.realname">
   </div>
   <div *ngIf="formErrors.realname" class="alert alert-danger">
     {{ formErrors.realname }}
   </div>
   <div class="manlab manlab-font">
     <label>Telephone：</label>
-    <input type="text"  name="mobilephone" formControlName="mobilephone">
+    <input type="text"  name="mobilephone" formControlName="mobilephone" [(ngModel)]="user.mobilephone">
   </div>
   <div *ngIf="formErrors.mobilephone" class="alert alert-danger">
     {{ formErrors.mobilephone}}
   </div>
   <div class="manlab manlab-font">
     <label>Email：</label>
-    <input type="text" name="email" formControlName="email">
+    <input type="text" name="email" formControlName="email" [(ngModel)]="user.email">
   </div>
   <div *ngIf="formErrors.email" class="alert alert-danger">
     {{ formErrors.email }}
@@ -30,9 +30,9 @@
   <div class="manlab manlab-font">
     <label>Gender：</label>
     <span class="sex-right">
-             <input type="radio" name="sex" formControlName="sex" value="1">
+             <input type="radio" formControlName="sex" value="1" [checked]="user.sex==1">
              <label class="lab-sex">Woman</label>
-             <input type="radio" name="sex" formControlName="sex" value="0">
+             <input type="radio" formControlName="sex" value="0" [checked]="user.sex==0">
              <label class="lab-sex">Man</label>
             </span>
   </div>
@@ -53,11 +53,23 @@
   <div *ngIf="formErrors.confirmPassword" class="alert alert-danger">
     {{ formErrors.confirmPassword }}
   </div>
+  <div class="manlab manlab-font">
+    <label>Is Valid:</label>
+    <span class="sex-right">
+             <input type="radio" formControlName="isvalid" value="1" [checked]="user.isvalid==1">
+             <label class="lab-sex">Valid</label>
+             <input type="radio" formControlName="isvalid" value="0" [checked]="user.isvalid==0">
+             <label class="lab-sex">Invalid</label>
+            </span>
+  </div>
+  <div *ngIf="formErrors.isvalid" class="alert alert-danger">
+    {{ formErrors.isvalid}}
+  </div>
   <alert *ngIf="error" type="warning">
     <strong>Warning! </strong>{{error}}
   </alert>
   <div class="man-add-btn">
-    <button type="submit" class="btn manbtn" [disabled]="!userAddFormGroup.valid" (click)="save()">Save</button>
+    <button type="submit" class="btn manbtn" [disabled]="!userEditFormGroup.valid" (click)="update()">Update</button>
     <button type="reset" class="btn manbtn" (click)="reset()">Reset</button>
   </div>
 

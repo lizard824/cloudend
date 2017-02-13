@@ -96,6 +96,7 @@ export class UserAddFormComponent extends ValidationComponent implements OnInit{
   }
 
   save() {
+    delete this.userAddFormGroup.value.confirmPassword;
     this.user = this.userAddFormGroup.value;
     this.user.authtype = 1;
     this.user.isvalid = 1;

@@ -11,7 +11,7 @@
     </div>
 
     <span class="domimg">
-         <a routerLink="/user/add" routerLinkActive="active"><img src="../../../assets/images/clicadd.png" alt=""></a>
+         <a [routerLink]="['/user/add']" routerLinkActive="active"><img src="../../../assets/images/clicadd.png" alt=""></a>
      </span>
 
   </div>
@@ -43,7 +43,7 @@
         {{item.lastlogintime | date:'y-MM-dd HH:mm:ss'}}
       </td>
       <td>
-        <a [routerLink]="['user/edit',item.id]" routerLinkActive="active"><i class="icon-edit"></i></a>
+        <a [routerLink]="['/user/edit',item.id]" routerLinkActive="active"><i class="icon-edit"></i></a>
         <a class="user-list-dele" (click)="del(item.id)"><i class="icon-trash"></i></a>
       </td>
     </tr>

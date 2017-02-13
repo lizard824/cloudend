@@ -8,7 +8,7 @@ export const rootRouterConfig: Routes = [
   {path: '',   redirectTo: '/user', pathMatch: 'full' },
   {path:'user',component:UserListComponent},
   {path: 'user/add', component: UserAddFormComponent},
-  {path:'user/edit:id',component:UserEditFormComponent},
+  {path:'user/edit/:id',component:UserEditFormComponent},
   {path:'domain',component:DomainComponent}
 ];
 

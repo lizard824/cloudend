@@ -1,14 +1,11 @@
 /**
  * Created by duanxc1 on 2/13/2017.
  */
-/**
- * Created by duanxc1 on 1/16/2017.
- */
 import {Component, OnInit} from '@angular/core';
 import {ValidationComponent, ValidationConfig, XValidator} from "../../shared/model/validation-model";
 import {User} from "../../shared/user.service";
 import {Validators, FormGroup, AbstractControl, ValidatorFn, FormBuilder} from "@angular/forms";
-import {Router} from "@angular/router";
+import {Router, Params, ActivatedRoute} from "@angular/router";
 import {HttpService} from "../../shared/http.service";
 
 @Component({
@@ -20,14 +17,29 @@ import {HttpService} from "../../shared/http.service";
 export class UserEditFormComponent extends ValidationComponent implements OnInit{
   user:User = new User();
   userEditFormGroup: FormGroup;
+  uid: number;
   error:String;
 
   ngOnInit() {
     this.buildValidationForm();
+    this.route.params.forEach((params: Params) => {
+      this.http.get("/api/user/edit/" + params["id"]).subscribe((res: any) => {
+        if (res.success) {
+          this.user = res.result;
+          //在界面加载完数据后就打开开关进行验证
+          this.buildValidationForm();
+          for (const key in this.userEditFormGroup.controls) {
+            this.userEditFormGroup.controls[key].markAsDirty();
+          }
+          this.onValueChanged(this.userEditFormGroup);
+        }
+      });
+    });　
   }
 
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private http: HttpService,
     private fb: FormBuilder
   ) {
@@ -79,6 +91,12 @@ export class UserEditFormComponent extends ValidationComponent implements OnInit
         validators: {
           'maxlength': { fn: Validators.maxLength(50), error: 'Password cannot be more than 50 characters long.' },
           'checkPasswordMatch': { fn: this.checkPasswordMatch(), error: 'These passwords don\'t match. Try again?' }
+        },
+      },
+      'isvalid': {
+        value: this.user.isvalid,
+        validators: {
+          'required': { fn: Validators.required, error: 'Is Valid can not be empty.' }
         }
       }
     };
@@ -98,20 +116,24 @@ export class UserEditFormComponent extends ValidationComponent implements OnInit
     };
   }
 
-  save() {
-    this.user = this.userEditFormGroup.value;
-    this.user.authtype = 1;
-    this.user.isvalid = 1;
-    this.http.post("/api/user/add", this.user).subscribe((res: any) => {
-      if (res.result==true) {
-        this.router.navigate(["/user"]);
-      } else {
-        this.error = res.msg;
-      }
-    });
-  }
-
   reset() {
     this.buildValidationForm();
+  }
+
+  update(){
+    delete this.userEditFormGroup.value.confirmPassword;
+    this.user = this.userEditFormGroup.value;
+    this.user.id = this.uid;
+    if(this.userEditFormGroup.value.password == ""){
+      delete this.user.password;
+    }
+    delete this.userEditFormGroup.value.password;
+    this.http.post("/api/user/update", {"user":this.user}).subscribe((res: any) => {
+      if (res.success) {
+        this.router.navigate(["/user"]);
+      }else{
+        this.error = "Update user failed!";
+      }
+    });
   }
 }
