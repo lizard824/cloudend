@@ -1,0 +1,22 @@
+.mantable{
+	width:100%;
+	height:auto;
+	text-align: left;
+	margin-top: 20px;	
+	box-shadow: 0 0 10px rgba(0,0,0,0.2)
+}
+ .mantable tr {
+    width:100%;
+}
+.table-bj {
+	background: #ccdad5;
+}
+ .table-w {
+    background:#fff;
+}
+ .tr-bj {
+	background: #f2f2f2;
+}
+.text-left {
+	text-align: left;
+}
