@@ -14,6 +14,9 @@ import {UserService} from "./shared/user.service";
 import {PaginationCustomizeComponent} from "./shared/component/pagination.customize.component";
 import {UserFormComponent} from "./user/user-form/user-form.component";
 
+// Imports for loading & configuring the in-memory web api
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,9 @@ import {UserFormComponent} from "./user/user-form/user-form.component";
     DropdownModule.forRoot(),
     PaginationModule.forRoot(),
     ModalModule.forRoot(),
-    RouterModule.forRoot(rootRouterConfig, { useHash: true })
+    RouterModule.forRoot(rootRouterConfig, { useHash: true }),
+    //
+    InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   providers: [
     UserService

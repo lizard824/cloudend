@@ -41,6 +41,30 @@
                                 </div>
                                 <p class="xopform col-sm-8">The name wrong</p>
                             </div>
+                          <div class="form-group">
+
+                            <label class="col-sm-3 text-left control-label">Service Name:</label>
+                            <div class=" col-sm-12">
+                              <input type="text" class="form-control" value="Service Name " id="servicenam">
+                            </div>
+                            <p class="xopform col-sm-8">The name wrong</p>
+                          </div>
+                          <div class="form-group">
+
+                            <label class="col-sm-3 text-left control-label">Sign Url:</label>
+                            <div class=" col-sm-12">
+                              <input type="text" class="form-control" value="Sign Url " id="signurl">
+                            </div>
+                            <p class="xopform col-sm-8">The name wrong</p>
+                          </div>
+                          <div class="form-group">
+
+                            <label class="col-sm-3 text-left control-label">Logout Url:</label>
+                            <div class=" col-sm-12">
+                              <input type="text" class="form-control" value="Logout Url " id="logouturl">
+                            </div>
+                            <p class="xopform col-sm-8">The name wrong</p>
+                          </div>
                             <div class="divider"></div>
                             <div class="form-group">
                                 <div class="col-sm-offset-5 col-sm-5">
@@ -66,17 +90,36 @@
             <td>
                 Domain Name
             </td>
+          <td>
+            service
+          </td>
+          <td>
+            sign url
+          </td>
+          <td>
+            logout url
+          </td>
+
             <td>
                 Operation
             </td>
         </tr>
-        <tr *ngfor="let item of domainList;let odd = odd" [ngClass]="{'tr-bj':odd}">
+        <tr *ngFor="let item of domainList;let odd = odd" [ngClass]="{'tr-bj':odd}">
             <td>
                 {{item.sysname}}
             </td>
             <td>
                 {{item.domainname}}
             </td>
+          <td>
+            {{item.servicename}}
+          </td>
+          <td>
+            {{item.signurl}}
+          </td>
+          <td>
+            {{item.logouturl}}
+          </td>
             <td>
                 <i class="icon-trash"></i>
             </td>
