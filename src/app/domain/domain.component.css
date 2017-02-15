@@ -61,6 +61,10 @@
     float: left;
 
 }
+.m-earh  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #f9f8f4 inset;
+    border: 0px solid #CCC!important;
+    }
 .m-earh .earhimg{
 	width:75px;
 	height:100%;

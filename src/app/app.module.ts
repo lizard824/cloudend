@@ -5,18 +5,17 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
-import {DropdownModule, PaginationModule,  ModalModule} from "ng2-bootstrap";
+import {DropdownModule, PaginationModule, ModalModule, AlertModule} from "ng2-bootstrap";
 import {NavComponent} from "./nav/nav.component";
 import {HeaderComponent} from "./header/header.component";
-import {UserListComponent} from "./user/user-list/user-list.component";
+import {UserListComponent} from "./user/list/user-list.component";
 import {DomainComponent} from "./domain/domain.component";
 import {UserService} from "./shared/user.service";
 import {PaginationCustomizeComponent} from "./shared/component/pagination.customize.component";
-import {UserFormComponent} from "./user/user-form/user-form.component";
+import {UserAddFormComponent} from "./user/add/user-add.component";
+import {HttpService} from "./shared/http.service";
+import {UserEditFormComponent} from "./user/edit/user-edit.component";
 
-// Imports for loading & configuring the in-memory web api
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,8 @@ import { InMemoryDataService }  from './in-memory-data.service';
     UserListComponent,
     DomainComponent,
     PaginationCustomizeComponent,
-    UserFormComponent
+    UserAddFormComponent,
+    UserEditFormComponent
   ],
   imports: [
     BrowserModule,
@@ -36,12 +36,12 @@ import { InMemoryDataService }  from './in-memory-data.service';
     DropdownModule.forRoot(),
     PaginationModule.forRoot(),
     ModalModule.forRoot(),
-    RouterModule.forRoot(rootRouterConfig, { useHash: true }),
-    //
-    InMemoryWebApiModule.forRoot(InMemoryDataService)
+    AlertModule.forRoot(),
+    RouterModule.forRoot(rootRouterConfig, { useHash: true })
   ],
   providers: [
-    UserService
+    UserService,
+    HttpService
   ],
   bootstrap: [ AppComponent ]
 })

@@ -2,7 +2,7 @@
  * Created by duanxc1 on 1/13/2017.
  */
 import {Component,OnInit} from '@angular/core';
-import {DomainService} from '../shared/domain.service'
+
 
 @Component({
   selector: 'domain',
@@ -19,7 +19,7 @@ export class DomainComponent implements OnInit{
   ];
 
   constructor(
-    private domainService:DomainService
+
   ){}
 
   ngOnInit(){
@@ -31,22 +31,12 @@ export class DomainComponent implements OnInit{
   }
 
   add(sysname:string,domainname:string):void{
-    sysname = sysname.trim();
-    this.domainService.create(sysname)
-      .then(domain =>{
-        this.domains.push(domain);
-      });
-
 
 
   }
 
   delete(domain:Domain):void{
-    this.domainService
-      .delete(domain.id)
-      .then(()=>{
-        this.domains = this.domains.filter(d=>d!== domain);
-      })
+
   }
 
 
