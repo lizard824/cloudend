@@ -3,84 +3,84 @@
  <table  class="mantable table">
          <tr class="table-bj" >
             <td>
-               System Name 
+               Username
             </td>
             <td>
-               Domain Name
-            </td>                       
+               {{user.username}}
+            </td>
          </tr>
          <tr>
             <td>
-                windows10
+                Authtype
             </td>
             <td>
-                www.dogdog.com
+              {{userType(user.authtype)}}
             </td>
          </tr>
            <tr class="table-bj">
             <td>
-               System Name 
+               Realname
             </td>
             <td>
-               Domain Name
-            </td>                       
+               {{user.realname}}
+            </td>
          </tr>
          <tr>
             <td>
-                windows10
+                Gender
             </td>
             <td>
-                www.dogdog.com
+              {{userGender(user.sex)}}
             </td>
          </tr>
            <tr class="table-bj">
             <td>
-               System Name 
+               Email
             </td>
             <td>
-               Domain Name
-            </td>                       
+               {{user.email}}
+            </td>
          </tr>
           <tr>
             <td>
-                windows10
+                Phone
             </td>
             <td>
-                www.dogdog.com
+                {{user.mobilephone}}
             </td>
          </tr>
            <tr class="table-bj">
             <td>
-               System Name 
+               Is Valid
             </td>
             <td>
-               Domain Name
-            </td>                       
+               {{userValid(user.isvalid)}}
+            </td>
          </tr>
          <tr>
             <td>
-                windows10
+                Last Login Time
             </td>
             <td>
-                www.dogdog.com
+                {{user.lastlogintime | date:'y-MM-dd HH:mm:ss'}}
             </td>
          </tr>
            <tr class="table-bj">
             <td>
-               System Name 
+               Create at
             </td>
             <td>
-               Domain Name
-            </td>                       
+               {{user.createdAt | date:'y-MM-dd HH:mm:ss'}}
+            </td>
          </tr>
           <tr>
             <td>
-                windows10
+                Update at
             </td>
             <td>
-                www.dogdog.com
+                {{user.updatedAt | date:'y-MM-dd HH:mm:ss'}}
             </td>
          </tr>
-           
+
     </table>
 <!-- detail table end -->

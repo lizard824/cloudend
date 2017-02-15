@@ -15,7 +15,7 @@
   </div>
   <div class="manlab manlab-font">
     <label>Telephone：</label>
-    <input type="text"  name="mobilephone" formControlName="mobilephone" [(ngModel)]="user.mobilephone">
+    <input type="text" name="mobilephone" formControlName="mobilephone" [(ngModel)]="user.mobilephone">
   </div>
   <div *ngIf="formErrors.mobilephone" class="alert alert-danger">
     {{ formErrors.mobilephone}}
@@ -39,19 +39,21 @@
   <div *ngIf="formErrors.sex" class="alert alert-danger">
     {{ formErrors.sex}}
   </div>
-  <div class="manlab manlab-font">
-    <label>Password：</label>
-    <input type="password" name="password" formControlName="password">
-  </div>
-  <div *ngIf="formErrors.password" class="alert alert-danger">
-    {{ formErrors.password }}
-  </div>
-  <div class="manlab manlab-font">
-    <label>Confirm：</label>
-    <input type="password" name="confirmPassword" formControlName="confirmPassword">
-  </div>
-  <div *ngIf="formErrors.confirmPassword" class="alert alert-danger">
-    {{ formErrors.confirmPassword }}
+  <div *ngIf="user.authtype==1">
+    <div class="manlab manlab-font">
+      <label>Password：</label>
+      <input type="password" name="password" formControlName="password" [(ngModel)]="user.password">
+    </div>
+    <div *ngIf="formErrors.password" class="alert alert-danger">
+      {{ formErrors.password }}
+    </div>
+    <div class="manlab manlab-font">
+      <label>Confirm：</label>
+      <input type="password" name="confirmPassword" formControlName="confirmPassword">
+    </div>
+    <div *ngIf="formErrors.confirmPassword" class="alert alert-danger">
+      {{ formErrors.confirmPassword }}
+    </div>
   </div>
   <div class="manlab manlab-font">
     <label>Is Valid:</label>

@@ -26,6 +26,8 @@ export class UserEditFormComponent extends ValidationComponent implements OnInit
       this.http.get("/api/user/edit/" + params["id"]).subscribe((res: any) => {
         if (res.success) {
           this.user = res.result;
+          this.uid = res.result.id;
+          delete this.user.password;
           //在界面加载完数据后就打开开关进行验证
           this.buildValidationForm();
           for (const key in this.userEditFormGroup.controls) {
@@ -124,15 +126,11 @@ export class UserEditFormComponent extends ValidationComponent implements OnInit
     delete this.userEditFormGroup.value.confirmPassword;
     this.user = this.userEditFormGroup.value;
     this.user.id = this.uid;
-    if(this.userEditFormGroup.value.password == ""){
-      delete this.user.password;
-    }
-    delete this.userEditFormGroup.value.password;
-    this.http.post("/api/user/update", {"user":this.user}).subscribe((res: any) => {
+    this.http.post("/api/user/update", this.user).subscribe((res: any) => {
       if (res.success) {
         this.router.navigate(["/user"]);
       }else{
-        this.error = "Update user failed!";
+        this.error = res.msg;
       }
     });
   }

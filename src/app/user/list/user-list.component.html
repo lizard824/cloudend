@@ -34,7 +34,7 @@
     </tr>
     <tr *ngFor="let item of userList;let odd = odd" [ngClass]="{'tr-bj':odd}">
       <td>
-        {{item.username}}
+        <a [routerLink]="['/user/detail',item.id]" routerLinkActive="active">{{item.username}}</a>
       </td>
       <td>
         {{userType(item.authtype)}}
@@ -44,10 +44,13 @@
       </td>
       <td>
         <a [routerLink]="['/user/edit',item.id]" routerLinkActive="active"><i class="icon-edit"></i></a>
-        <a class="user-list-dele" (click)="del(item.id)"><i class="icon-trash"></i></a>
+        <a href="#" class="user-list-dele" (click)="del(item.id)"><i class="icon-trash"></i></a>
       </td>
     </tr>
   </table>
+  <alert *ngIf="info" type="info">
+    {{info}}
+  </alert>
   <!-- page start-->
   <pagination-customize [page]="page" (search)="search($event)"></pagination-customize>
   <!--page end  -->

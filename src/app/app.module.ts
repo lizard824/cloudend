@@ -15,6 +15,7 @@ import {PaginationCustomizeComponent} from "./shared/component/pagination.custom
 import {UserAddFormComponent} from "./user/add/user-add.component";
 import {HttpService} from "./shared/http.service";
 import {UserEditFormComponent} from "./user/edit/user-edit.component";
+import {UserDetailComponent} from "./user/detail/user-detail.component";
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {UserEditFormComponent} from "./user/edit/user-edit.component";
     DomainComponent,
     PaginationCustomizeComponent,
     UserAddFormComponent,
-    UserEditFormComponent
+    UserEditFormComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,

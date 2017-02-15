@@ -9,8 +9,26 @@ export class UserService {
     2: "LDAP",
   };
 
+  public static GENDER = {
+    0: "Man",
+    1: "Woman",
+  };
+
+  public static ISVALID = {
+    0: "Invalid",
+    1: "Valid",
+  };
+
   public userType(type: number) {
     return UserService.AUTHTYPE[type];
+  }
+
+  public userGender(sex:number){
+    return UserService.GENDER[sex];
+  }
+
+  public userValid(isvalid:number){
+    return UserService.ISVALID[isvalid];
   }
 }
 

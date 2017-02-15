@@ -15,6 +15,7 @@ export class UserListComponent implements OnInit {
   userList: Array<User> = [];
   page: Pagination;
   user: User;
+  info:String;
 
   constructor(private userService: UserService,
               private http: HttpService) {
@@ -40,10 +41,13 @@ export class UserListComponent implements OnInit {
   }
 
   del(id){
-    let idList:Array<Number>=[];
-    idList[0] = id;
-    this.http.post("/api/user/del",{"idList[]":idList}).subscribe((res:any)=>{
-
+    this.http.get("/api/user/del/"+id).subscribe((res:any)=>{
+      if (res.success) {
+        this.search('');
+        this.info="";
+      }else{
+        this.info=res.msg;
+      }
     });
   }
 
