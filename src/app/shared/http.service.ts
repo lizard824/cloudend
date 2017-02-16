@@ -34,6 +34,30 @@ export class HttpService {
       });
   }
 
+  put(url: string, body: any, options?: RequestOptionsArgs, callHook = true): Observable<Response> {
+    options = this.requestWrapper({ url: url, method: RequestMethod.Put }, options);
+
+    return this.http.put(url, body, options)
+      .map(res => {
+        return res.json() || {};
+      })
+      .catch((err, caught) => {
+        return Observable.throw(err);
+      });
+  }
+
+  delete(url: string, options?: RequestOptionsArgs, callHook = true): Observable<Response> {
+    options = this.requestWrapper({ url: url, method: RequestMethod.Delete, body: "" }, options);
+
+    return this.http.delete(url, options)
+      .map(res => {
+        return res.json() || {};
+      })
+      .catch((err, caught) => {
+        return Observable.throw(err);
+      });
+  }
+
   private requestWrapper(requestArgs: RequestOptionsArgs, options?: RequestOptionsArgs): RequestOptionsArgs {
     if (!options) {
       options = {};

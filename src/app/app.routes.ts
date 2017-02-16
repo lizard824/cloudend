@@ -6,7 +6,7 @@ import {UserEditFormComponent} from "./user/edit/user-edit.component";
 import {UserDetailComponent} from "./user/detail/user-detail.component";
 
 export const rootRouterConfig: Routes = [
-  {path: '',   redirectTo: '/user', pathMatch: 'full' },
+  {path: '',   redirectTo: '/login', pathMatch: 'full' },
   {path:'user',component:UserListComponent},
   {path: 'user/add', component: UserAddFormComponent},
   {path:'user/edit/:id',component:UserEditFormComponent},

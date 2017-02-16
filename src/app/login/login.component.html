@@ -1,20 +1,27 @@
 	<div class="log-div">
 		<div class="log-top"></div>
-		<form class="log-form">
+		<form class="log-form" [formGroup]="userLoginFormGroup">
 			<div class="log-input">
 				 <div class="log-text">
-				 	<img src="images/person.png" alt="">
-				 	<input type="text" value="Username">
-				 </div>				 
-				 <p>The user name wrong</p>
+				 	<img src="../../assets/images/person.png" alt="">
+				 	<input type="text" name="username" formControlName="username" placeholder="Please input username">
+				 </div>
 			</div>
+      <div *ngIf="formErrors.username" class="alert alert-danger">
+        {{ formErrors.username }}
+      </div>
 			<div class="log-input">
 				 <div class="log-text">
-				 	<img src="images/passord.png" alt="">
-				 	<input type="text" value="Password">
-				 </div>				 
-				 <p>The user name wrong</p>
+				 	<img src="../../assets/images/passord.png" alt="">
+				 	<input type="password" formControlName="password" name="password" placeholder="Please input password">
+				 </div>
 			</div>
-			<button class="log-btn">Login</button>
+      <div *ngIf="formErrors.password" class="alert alert-danger">
+        {{ formErrors.password }}
+      </div>
+      <alert *ngIf="error" type="warning">
+        <strong>Warning! </strong>{{error}}
+      </alert>
+			<button class="log-btn" (click)="login()">Login</button>
 		</form>
 	</div>
