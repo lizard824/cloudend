@@ -103,6 +103,9 @@ body{
     display: block;
     margin:60px auto;
 }
+.log-btn-bj{
+	background: #B3BEBA;
+}
 @media (min-width: 760px) and (max-width:1199px) {
 	.log-div{
 		width:45%;

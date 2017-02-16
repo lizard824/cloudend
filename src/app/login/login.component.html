@@ -2,11 +2,8 @@
 		<div class="log-top"></div>
 		<form class="log-form" [formGroup]="userLoginFormGroup">
 			<div class="log-input">
-<<<<<<< Updated upstream
 				 <div class="log-text {{formErrors.username?'error-border':''}}">
-=======
-				 <div class="log-text">
->>>>>>> Stashed changes
+
 				 	<img src="../../assets/images/person.png" alt="">
 				 	<input type="text" name="username" formControlName="username" placeholder="Please input username">
 				 </div>
@@ -28,6 +25,6 @@
       <alert *ngIf="error" type="danger">
        {{error}}
       </alert>
-			<button type="submit" class="log-btn" [disabled]="!userLoginFormGroup.valid" (click)="login()">Login</button>
+			<button type="submit" class="log-btn" [disabled]="!userLoginFormGroup.valid" (click)="login()" >Login</button>
 		</form>
 	</div>
