@@ -6,6 +6,7 @@ import {User} from "../shared/user.service";
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 import {HttpService} from "../shared/http.service";
 import {ValidationComponent, ValidationConfig} from "../shared/model/validation-model";
+import {Router} from "@angular/router";
 @Component({
   selector: 'login',
   templateUrl: './login.component.html',
@@ -21,6 +22,7 @@ export class LoginComponent extends ValidationComponent implements OnInit{
     this.buildValidationForm();
   }
   constructor(
+    private router:Router,
     private http: HttpService,
     private fb: FormBuilder
   ) {
@@ -48,5 +50,12 @@ export class LoginComponent extends ValidationComponent implements OnInit{
   }
 
   login() {
+    this.http.post("/api/user/admin", this.user).subscribe((res: any) => {
+      if (res.success==true) {
+        this.router.navigate(["/user"]);
+      } else {
+        this.error = res.msg;
+      }
+    });
   }
 }

@@ -19,9 +19,9 @@
       <div *ngIf="formErrors.password" class="alert alert-danger">
         {{ formErrors.password }}
       </div>
-      <alert *ngIf="error" type="warning">
-        <strong>Warning! </strong>{{error}}
+      <alert *ngIf="error" type="danger">
+        {{error}}
       </alert>
-			<button class="log-btn" (click)="login()">Login</button>
+			<button type="submit" class="log-btn" [disabled]="!userLoginFormGroup.valid" (click)="login()">Login</button>
 		</form>
 	</div>
