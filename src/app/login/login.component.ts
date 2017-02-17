@@ -50,9 +50,11 @@ export class LoginComponent extends ValidationComponent implements OnInit{
   }
 
   login() {
+    this.user = this.userLoginFormGroup.value;
     this.http.post("/api/user/admin", this.user).subscribe((res: any) => {
       if (res.success==true) {
-        this.router.navigate(["/user"]);
+        this.http.setJwtToken("Bearer " + res.JSW_TOKEN_KEY);
+        this.router.navigate(["/home/user"]);
       } else {
         this.error = res.msg;
       }

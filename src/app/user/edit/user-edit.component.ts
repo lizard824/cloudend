@@ -128,7 +128,7 @@ export class UserEditFormComponent extends ValidationComponent implements OnInit
     this.user.id = this.uid;
     this.http.post("/api/user/update", this.user).subscribe((res: any) => {
       if (res.success) {
-        this.router.navigate(["/user"]);
+        this.router.navigate(["/home/user"]);
       }else{
         this.error = res.msg;
       }

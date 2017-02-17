@@ -6,8 +6,17 @@ import {Observable} from "rxjs";
  */
 @Injectable()
 export class HttpService {
+  private jwtToken = "";
 
   constructor(private http: Http) {
+  }
+
+  getJwtToken() {
+    return this.jwtToken;
+  }
+
+  setJwtToken(token: string) {
+    this.jwtToken = token;
   }
 
   get(url: string, options?: RequestOptionsArgs): Observable<Response> {
@@ -72,6 +81,7 @@ export class HttpService {
     }
 
     options.headers.append('Content-Type', 'application/json');
+    options.headers.append('Authorization', this.jwtToken);
     return options;
   }
 }

@@ -102,7 +102,7 @@ export class UserAddFormComponent extends ValidationComponent implements OnInit{
     this.user.isvalid = 1;
     this.http.post("/api/user/add", this.user).subscribe((res: any) => {
       if (res.success==true) {
-        this.router.navigate(["/user"]);
+        this.router.navigate(["/home/user"]);
       } else {
         this.error = res.msg;
       }

@@ -53,12 +53,12 @@
   <div *ngIf="formErrors.confirmPassword" class="alert alert-danger">
     {{ formErrors.confirmPassword }}
   </div>
-  <alert *ngIf="error" type="warning">
-    <strong>Warning! </strong>{{error}}
+  <alert *ngIf="error" type="danger">
+    {{error}}
   </alert>
   <div class="man-add-btn">
     <button type="submit" class="btn manbtn" [disabled]="!userAddFormGroup.valid" (click)="save()">Save</button>
     <button type="reset" class="btn manbtn" (click)="reset()">Reset</button>
   </div>
-  
+
 </form>
