@@ -4,12 +4,12 @@
         <div class="m-earh">
             <input type="text" id="mearh" required [(ngModel)]="username" name="username" placeholder="Please enter the username">
             <span class="earhimg">
-         <img src="../../assets/images/m-earh.png" alt="">
+         <img src="../../../assets/images/m-earh.png" alt="">
      </span>
 
         </div>
         <span class="domimg" (click)="staticModal.show()">
-         <img src="../../assets/images/clicadd.png" alt="">
+         <img src="../../../assets/images/clicadd.png" alt="">
      </span>
 
 
@@ -68,7 +68,7 @@
                             <div class="divider"></div>
                             <div class="form-group">
                                 <div class="col-sm-offset-5 col-sm-5">
-                                    <button type="submit" class="btn btn-default xopsub">Submit</button>
+                                    <button type="submit" class="btn btn-default xopsub" (click)="submit()">Submit</button>
                                 </div>
                             </div>
                         </form>
@@ -121,11 +121,12 @@
             {{item.logouturl}}
           </td>
             <td>
-                <i class="icon-trash"></i>
+              <a [routerLink]="['/domain/edit',item.id]" routerLinkActive="active"><i class="icon-edit"></i></a>
+              <a class="user-list-dele" (click)="del(item.id)"><i class="icon-trash"></i></a>
             </td>
         </tr>
     </table>
     <!-- page start -->
-    <pagination-customize [totalItems]="totalItems" [currentPage]="currentPage"></pagination-customize>
+        <!--<pagination-customize [page]="page" (search)="search($event)"></pagination-customize>-->
     <!--page end  -->
 </div>

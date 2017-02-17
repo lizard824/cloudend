@@ -9,7 +9,7 @@ import {DropdownModule, PaginationModule, ModalModule, AlertModule} from "ng2-bo
 import {NavComponent} from "./nav/nav.component";
 import {HeaderComponent} from "./header/header.component";
 import {UserListComponent} from "./user/list/user-list.component";
-import {DomainComponent} from "./domain/domain.component";
+import {DomainComponent} from "./domain/list/domain-list.component";
 import {UserService} from "./shared/user.service";
 import {PaginationCustomizeComponent} from "./shared/component/pagination.customize.component";
 import {UserAddFormComponent} from "./user/add/user-add.component";

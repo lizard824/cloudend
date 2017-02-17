@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import {UserListComponent} from "./user/list/user-list.component";
-import {DomainComponent} from "./domain/domain.component";
+import {DomainComponent} from "./domain/list/domain-list.component";
 import {UserAddFormComponent} from "./user/add/user-add.component";
 import {UserEditFormComponent} from "./user/edit/user-edit.component";
 
