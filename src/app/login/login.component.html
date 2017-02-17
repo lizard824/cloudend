@@ -1,20 +1,30 @@
 	<div class="log-div">
 		<div class="log-top"></div>
-		<form class="log-form">
+		<form class="log-form" [formGroup]="userLoginFormGroup">
 			<div class="log-input">
-				 <div class="log-text">
-				 	<img src="images/person.png" alt="">
-				 	<input type="text" value="Username">
-				 </div>				 
-				 <p>The user name wrong</p>
+				 <div class="log-text {{formErrors.username?'error-border':''}}">
+
+				 	<img src="../../assets/images/person.png" alt="">
+				 	<input type="text" name="username" formControlName="username" placeholder="Please input username">
+				 </div>
+				 <div *ngIf="formErrors.username" class="error-p">
+                   {{ formErrors.username }}
+                </div>
 			</div>
+
 			<div class="log-input">
-				 <div class="log-text">
-				 	<img src="images/passord.png" alt="">
-				 	<input type="text" value="Password">
-				 </div>				 
-				 <p>The user name wrong</p>
+				 <div class="log-text {{formErrors.password?'error-border':''}}">
+				 	<img src="../../assets/images/passord.png" alt="">
+				 	<input type="password" formControlName="password" name="password" placeholder="Please input password">
+				 </div>
+				 <div *ngIf="formErrors.password" class="error-p">
+                    {{ formErrors.password }}
+                 </div>
 			</div>
-			<button class="log-btn">Login</button>
+
+      <alert *ngIf="error" type="danger">
+       {{error}}
+      </alert>
+			<button type="submit" class="btn log-btn" [disabled]="!userLoginFormGroup.valid" (click)="login()" >Login</button>
 		</form>
 	</div>

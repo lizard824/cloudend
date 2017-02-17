@@ -11,6 +11,5 @@ export class Pagination {
   pageSize = 12;
   pageCount:number;
   result:Array<any>;
-  param:Object;
 }
 

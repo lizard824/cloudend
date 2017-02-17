@@ -11,7 +11,7 @@
     </div>
 
     <span class="domimg">
-         <a [routerLink]="['/user/add']" routerLinkActive="active"><img src="../../../assets/images/clicadd.png" alt=""></a>
+         <a [routerLink]="['/home/user/add']" routerLinkActive="active"><img src="../../../assets/images/clicadd.png" alt=""></a>
      </span>
 
   </div>
@@ -34,7 +34,7 @@
     </tr>
     <tr *ngFor="let item of userList;let odd = odd" [ngClass]="{'tr-bj':odd}">
       <td>
-        {{item.username}}
+        <a [routerLink]="['/home/user/detail',item.id]" routerLinkActive="active">{{item.username}}</a>
       </td>
       <td>
         {{userType(item.authtype)}}
@@ -43,11 +43,14 @@
         {{item.lastlogintime | date:'y-MM-dd HH:mm:ss'}}
       </td>
       <td>
-        <a [routerLink]="['/user/edit',item.id]" routerLinkActive="active"><i class="icon-edit"></i></a>
-        <a class="user-list-dele" (click)="del(item.id)"><i class="icon-trash"></i></a>
+        <a [routerLink]="['/home/user/edit',item.id]" routerLinkActive="active"><i class="icon-edit"></i></a>
+        <a href="#" class="user-list-dele" (click)="del(item.id)"><i class="icon-trash"></i></a>
       </td>
     </tr>
   </table>
+  <alert *ngIf="info" type="info">
+    {{info}}
+  </alert>
   <!-- page start-->
   <pagination-customize [page]="page" (search)="search($event)"></pagination-customize>
   <!--page end  -->
