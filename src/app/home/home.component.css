@@ -52,8 +52,6 @@ body{
 .manage .manright {
   width:76%;
   float: right;
-  overflow-x:auto;
-  overflow-y:hidden;
 }
 
 
