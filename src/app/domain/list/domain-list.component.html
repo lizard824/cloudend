@@ -2,9 +2,10 @@
     <div class="m-doma">
 
         <div class="m-earh">
-            <input type="text" id="mearh" required [(ngModel)]="username" name="username" placeholder="Please enter the username">
+            <input type="text" id="mearh" required [(ngModel)]="domain.sysName" name="sysname" placeholder="Please enter the sysname">
             <span class="earhimg">
-         <img src="../../../assets/images/m-earh.png" alt="">
+              <a (click)="search('')">
+              <img src="../../../assets/images/m-earh.png" alt=""></a>
      </span>
 
         </div>
@@ -127,6 +128,6 @@
         </tr>
     </table>
     <!-- page start -->
-        <!--<pagination-customize [page]="page" (search)="search($event)"></pagination-customize>-->
+        <pagination-customize [page]="page" (search)="search($event)"></pagination-customize>
     <!--page end  -->
 </div>
