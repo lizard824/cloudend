@@ -5,6 +5,7 @@ import {Component,OnInit} from '@angular/core';
 import {Domain} from "../../shared/domain.service";
 import {Pagination} from "../../shared/model/search-model";
 import {HttpService} from "../../shared/http.service";
+import {Router} from "@angular/router";
 @Component({
   selector: 'domain',
   templateUrl: './domain-list.component.html',
@@ -14,8 +15,10 @@ export class DomainComponent implements OnInit{
   page:Pagination;
   domain:Domain;
   domainList:Array<Domain>=[];
+  info:String;
+  error:String;
 
-  constructor(private http:HttpService){}
+  constructor(private http:HttpService,private router: Router,){}
 
   ngOnInit(){
     this.page = new Pagination();
@@ -27,8 +30,8 @@ export class DomainComponent implements OnInit{
     if (page === '') {
       page = new Pagination();
     }
-    page.param = this.domain;
-    this.http.post("/api/domain/page", {"domain": page.param, "page": page}).subscribe((res: any) => {
+
+    this.http.post("/api/domain/page", {"search":{"domain": this.domain.sysName}, "page": page}).subscribe((res: any) => {
       this.page.totalCount = res.page.totalCount;
       this.page.currentPage = res.page.currentPage;
       this.page.pageCount = res.page.pageCount;
@@ -37,11 +40,15 @@ export class DomainComponent implements OnInit{
   }
 
 
-  delete(id):void{
-    let idList:Array<Number>=[];
-    idList[0] = id;
-    this.http.post("/api/domain/del",{"idList[]":idList}).subscribe((res:any)=>{
+  delete(id){
 
+    this.http.get("/api/domain/del"+id).subscribe((res:any)=>{
+      if (res.success) {
+        this.search('');
+        this.info="";
+      }else{
+        this.info=res.msg;
+      }
     });
   }
 

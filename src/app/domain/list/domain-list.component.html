@@ -106,20 +106,20 @@
         </tr>
         <tr *ngFor="let item of domainList;let odd = odd" [ngClass]="{'tr-bj':odd}">
             <td>
-                {{item.sysname}}
+                {{item.sys_name}}
             </td>
             <td>
-                {{item.domainname}}
+                {{item.domain}}
             </td>
-          <td>
-            {{item.servicename}}
-          </td>
-          <td>
-            {{item.signurl}}
-          </td>
-          <td>
-            {{item.logouturl}}
-          </td>
+            <td>
+                {{item.service}}
+            </td>
+            <td>
+            {{item.sign_url}}
+            </td>
+            <td>
+            {{item.logout_url}}
+            </td>
             <td>
               <a [routerLink]="['/domain/edit',item.id]" routerLinkActive="active"><i class="icon-edit"></i></a>
               <a class="user-list-dele" (click)="del(item.id)"><i class="icon-trash"></i></a>
