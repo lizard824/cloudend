@@ -31,8 +31,7 @@ export class UserListComponent implements OnInit {
     if (page === '') {
       page = new Pagination();
     }
-    page.param = this.user;
-    this.http.post("/api/user/page", {"user": page.param, "page": page}).subscribe((res: any) => {
+    this.http.post("/api/user/page", {"search":{"username":this.user.username}, "page": page}).subscribe((res: any) => {
       this.page.totalCount = res.page.totalCount;
       this.page.currentPage = res.page.currentPage;
       this.page.pageCount = res.page.pageCount;

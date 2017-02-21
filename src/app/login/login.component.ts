@@ -2,7 +2,7 @@
  * Created by duanxc1 on 2/15/2017.
  */
 import {Component, OnInit} from '@angular/core';
-import {User} from "../shared/user.service";
+import {User, UserService} from "../shared/user.service";
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 import {HttpService} from "../shared/http.service";
 import {ValidationComponent, ValidationConfig} from "../shared/model/validation-model";
@@ -19,12 +19,16 @@ export class LoginComponent extends ValidationComponent implements OnInit{
   error:String;
 
   ngOnInit() {
+    if (this.http.getJwtToken() && "" != this.http.getJwtToken()) {
+      this.router.navigate(["/home/user"]);
+    }
     this.buildValidationForm();
   }
   constructor(
     private router:Router,
     private http: HttpService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private userService:UserService
   ) {
     super(fb)
   }
@@ -51,13 +55,14 @@ export class LoginComponent extends ValidationComponent implements OnInit{
 
   login() {
     this.user = this.userLoginFormGroup.value;
-    this.http.post("/api/user/admin", this.user).subscribe((res: any) => {
-      if (res.success==true) {
-        this.http.setJwtToken("Bearer " + res.JSW_TOKEN_KEY);
-        this.router.navigate(["/home/user"]);
-      } else {
-        this.error = res.msg;
-      }
-    });
+    this.userService.login(this.user).subscribe(
+      (res: any) => {
+        if (res.success==true) {
+          this.http.setJwtToken("Bearer " + res.token);
+          this.router.navigate(["/home/user"]);
+        } else {
+          this.error = res.msg;
+        }
+      });
   }
 }
