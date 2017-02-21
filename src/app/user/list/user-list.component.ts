@@ -40,6 +40,9 @@ export class UserListComponent implements OnInit {
   }
 
   del(id){
+    if (!confirm("Are you sure you want to delete this user?")) {
+      return;
+    }
     this.http.get("/api/user/del/"+id).subscribe((res:any)=>{
       if (res.success) {
         this.search('');
