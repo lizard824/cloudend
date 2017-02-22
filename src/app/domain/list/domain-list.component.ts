@@ -119,6 +119,7 @@ export class DomainComponent extends ValidationComponent implements OnInit{
     this.http.post("/api/domain/add",this.domain).subscribe((res:any)=>{
       if (res.success==true) {
         this.staticModal.hide();
+        this.search('');
       } else {
         this.error = res.msg;
       }
@@ -130,6 +131,7 @@ export class DomainComponent extends ValidationComponent implements OnInit{
     this.http.post("/api/domain/update",this.domain).subscribe((res:any)=>{
       if (res.success==true) {
         this.staticModalE.hide();
+        this.search('');
       } else {
         this.error = res.msg;
       }
