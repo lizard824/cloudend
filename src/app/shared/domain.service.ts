@@ -12,4 +12,5 @@ export class Domain{
     service:string;
     signUrl:string;
     logoutUrl:string;
+    searchName:string;
 }

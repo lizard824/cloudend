@@ -2,14 +2,14 @@
     <div class="m-doma">
 
         <div class="m-earh">
-            <input type="text" id="mearh" required [(ngModel)]="domain.sysName" name="sysname" placeholder="Please enter the sysname">
+            <input type="text" id="mearh" required [(ngModel)]="domain.searchName" name="sysname" placeholder="Please enter the sysname" (keyup)="search('')" >
             <span class="earhimg">
               <a (click)="search('')">
               <img src="../../../assets/images/m-earh.png" alt=""></a>
      </span>
 
         </div>
-        <span class="domimg" (click)="staticModal.show()">
+        <span class="domimg" (click)="showModal()">
          <img src="../../../assets/images/clicadd.png" alt="">
      </span>
 
@@ -24,47 +24,57 @@
             </button>
                     </div>
                     <div class="modal-body">
-                        <form role="form" class="form-horizontal">
+                        <form role="form" class="form-horizontal" [formGroup]="domainAddFormGroup">
                             <div class="form-group">
 
                                 <label class="col-sm-3 text-left control-label">System Name:</label>
                                 <div class=" col-sm-12">
-                                    <input type="text" value="System Name" class="form-control" id="sysnam">
+                                    <input type="text"  class="form-control" id="sysnam" name="sysName" formControlName="sysName">
                                 </div>
 
-                                <p class="xopform col-sm-8">The name wrong</p>
+                              <div *ngIf="formErrors.sysname" class="alert alert-danger">
+                                {{ formErrors.sysname }}
+                              </div>
                             </div>
                             <div class="form-group">
 
                                 <label class="col-sm-3 text-left control-label">Domain Name:</label>
                                 <div class=" col-sm-12">
-                                    <input type="text" class="form-control" value="Domain Name " id="domnam">
+                                    <input type="text" class="form-control"  id="domnam" name="domain" formControlName="domain">
                                 </div>
-                                <p class="xopform col-sm-8">The name wrong</p>
+                              <div *ngIf="formErrors.domainname" class="alert alert-danger">
+                                {{ formErrors.domainname }}
+                              </div>
                             </div>
                           <div class="form-group">
 
                             <label class="col-sm-3 text-left control-label">Service Name:</label>
                             <div class=" col-sm-12">
-                              <input type="text" class="form-control" value="Service Name " id="servicenam">
+                              <input type="text" class="form-control"  id="servicenam" name="service" formControlName="service">
                             </div>
-                            <p class="xopform col-sm-8">The name wrong</p>
+                            <div *ngIf="formErrors.servicename" class="alert alert-danger">
+                              {{ formErrors.servicename }}
+                            </div>
                           </div>
                           <div class="form-group">
 
                             <label class="col-sm-3 text-left control-label">Sign Url:</label>
                             <div class=" col-sm-12">
-                              <input type="text" class="form-control" value="Sign Url " id="signurl">
+                              <input type="text" class="form-control"  id="signurl" name="signUrl" formControlName="signUrl">
                             </div>
-                            <p class="xopform col-sm-8">The name wrong</p>
+                            <div *ngIf="formErrors.signurl" class="alert alert-danger">
+                              {{ formErrors.signurl }}
+                            </div>
                           </div>
                           <div class="form-group">
 
                             <label class="col-sm-3 text-left control-label">Logout Url:</label>
                             <div class=" col-sm-12">
-                              <input type="text" class="form-control" value="Logout Url " id="logouturl">
+                              <input type="text" class="form-control"  id="logouturl" name="logoutUrl" formControlName="logoutUrl">
                             </div>
-                            <p class="xopform col-sm-8">The name wrong</p>
+                            <div *ngIf="formErrors.signouturl" class="alert alert-danger">
+                              {{ formErrors.signouturl }}
+                            </div>
                           </div>
                             <div class="divider"></div>
                             <div class="form-group">
@@ -79,10 +89,87 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" bsModal #staticModalE="bs-modal" [config]="{backdrop: 'static'}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">EDIT</h4>
+              <button type="button" class="close pull-right" aria-label="Close" (click)="staticModalE.hide()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form role="form" class="form-horizontal" [formGroup]="domainEditFormGroup">
+                <div class="form-group">
+                  <div class=" col-sm-12">
+                    <input type="hidden"  [(ngModel)]="did" class="form-control"  formControlName="id">
+                  </div>
+                  <label class="col-sm-3 text-left control-label">System Name:</label>
+                  <div class=" col-sm-12">
+                    <input type="text" [(ngModel)]="domain.sysName" class="form-control" id="sysnam2" name="sysName" formControlName="sysName">
+                  </div>
+
+                  <div *ngIf="formErrors.sysname" class="alert alert-danger">
+                    {{ formErrors.sysname }}
+                  </div>
+                </div>
+                <div class="form-group">
+
+                  <label class="col-sm-3 text-left control-label">Domain Name:</label>
+                  <div class=" col-sm-12">
+                    <input type="text" class="form-control" [(ngModel)]="domain.domain" id="domnam2" name="domain" formControlName="domain">
+                  </div>
+                  <div *ngIf="formErrors.domainname" class="alert alert-danger">
+                    {{ formErrors.domainname }}
+                  </div>
+                </div>
+                <div class="form-group">
+
+                  <label class="col-sm-3 text-left control-label">Service Name:</label>
+                  <div class=" col-sm-12">
+                    <input type="text" class="form-control" [(ngModel)]="domain.service" id="servicenam2" name="service" formControlName="service">
+                  </div>
+                  <div *ngIf="formErrors.servicename" class="alert alert-danger">
+                    {{ formErrors.servicename }}
+                  </div>
+                </div>
+                <div class="form-group">
+
+                  <label class="col-sm-3 text-left control-label">Sign Url:</label>
+                  <div class=" col-sm-12">
+                    <input type="text" class="form-control" [(ngModel)]="domain.signUrl" id="signurl2" name="signUrl" formControlName="signUrl">
+                  </div>
+                  <div *ngIf="formErrors.signurl" class="alert alert-danger">
+                    {{ formErrors.signurl }}
+                  </div>
+                </div>
+                <div class="form-group">
+
+                  <label class="col-sm-3 text-left control-label">Logout Url:</label>
+                  <div class=" col-sm-12">
+                    <input type="text" class="form-control" [(ngModel)]="domain.logoutUrl" id="logouturl2" name="logoutUrl" formControlName="logoutUrl">
+                  </div>
+                  <div *ngIf="formErrors.signouturl" class="alert alert-danger">
+                    {{ formErrors.signouturl }}
+                  </div>
+                </div>
+                <div class="divider"></div>
+                <div class="form-group">
+                  <div class="col-sm-offset-5 col-sm-5">
+                    <button type="submit" class="btn btn-default xopsub" (click)="submit2()">Submit</button>
+                  </div>
+                </div>
+              </form>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
 
 
     </div>
-
+  <div class="man-overflow">
     <table class="mantable table">
         <tr class="table-bj">
             <td>
@@ -122,11 +209,12 @@
             {{item.logout_url}}
             </td>
             <td>
-              <a [routerLink]="['/domain/edit',item.id]" routerLinkActive="active"><i class="icon-edit"></i></a>
+              <a (click)="edit(item.id)" ><i class="icon-edit"></i></a>
               <a class="user-list-dele" (click)="del(item.id)"><i class="icon-trash"></i></a>
             </td>
         </tr>
     </table>
+    </div>
     <!-- page start -->
         <pagination-customize [page]="page" (search)="search($event)"></pagination-customize>
     <!--page end  -->
