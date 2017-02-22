@@ -31,9 +31,7 @@ export class UserListComponent implements OnInit {
     if (page === '') {
       page = new Pagination();
     }
-
-
-    this.http.post("/api/user/page", {"search":{"user": this.user.username}, "page": page}).subscribe((res: any) => {
+    this.http.post("/api/user/page", {"search":{"username":this.user.username}, "page": page}).subscribe((res: any) => {
       this.page.totalCount = res.page.totalCount;
       this.page.currentPage = res.page.currentPage;
       this.page.pageCount = res.page.pageCount;
@@ -42,6 +40,9 @@ export class UserListComponent implements OnInit {
   }
 
   del(id){
+    if (!confirm("Are you sure you want to delete this user?")) {
+      return;
+    }
     this.http.get("/api/user/del/"+id).subscribe((res:any)=>{
       if (res.success) {
         this.search('');
