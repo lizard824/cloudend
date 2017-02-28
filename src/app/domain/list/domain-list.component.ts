@@ -54,31 +54,31 @@ export class DomainComponent extends ValidationComponent implements OnInit{
       'sysName': {
         value: this.domain.sysName,
         validators: {
-          'required': { fn: Validators.required, error: 'sysname is required.' },
+          'required': { fn: Validators.required, error: 'System name is required.' },
         }
       },
       'domain':{
         value:this.domain.domain,
         validators:{
-          'required':{fn:Validators.required,error:'domainname is required.'},
+          'required':{fn:Validators.required,error:'Domain name is required.'},
         }
       },
       'service':{
         value: this.domain.service,
         validators:{
-          'required':{ fn:Validators.required,error:'servicename is required.'},
+          'required':{ fn:Validators.required,error:'Service name is required.'},
         }
       },
       'signUrl':{
         value: this.domain.signUrl,
         validators:{
-          'required':{ fn:Validators.required, error:'signurl is required.'},
+          'required':{ fn:Validators.required, error:'Sign url is required.'},
         }
       },
       'logoutUrl':{
         value: this.domain.logoutUrl,
         validators:{
-          'required':{ fn:Validators.required,error:'logouturl is required.'},
+          'required':{ fn:Validators.required,error:'Logout url is required.'},
         }
       }
 
@@ -104,6 +104,9 @@ export class DomainComponent extends ValidationComponent implements OnInit{
 
 
   del(id){
+    if (!confirm("Are you sure you want to delete this domain?")) {
+      return;
+    }
     this.http.get("/api/domain/del/"+id).subscribe((res:any)=>{
       if (res.success) {
         this.search('');

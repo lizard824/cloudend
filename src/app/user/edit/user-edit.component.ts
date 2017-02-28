@@ -92,7 +92,7 @@ export class UserEditFormComponent extends ValidationComponent implements OnInit
         value: "",
         validators: {
           'maxlength': { fn: Validators.maxLength(50), error: 'Password cannot be more than 50 characters long.' },
-          'checkPasswordMatch': { fn: this.checkPasswordMatch(), error: 'These passwords don\'t match. Try again?' }
+          'checkPasswordMatch': { fn: this.checkPasswordMatch(), error: 'These passwords don\'t match. Try again' }
         },
       },
       'isvalid': {

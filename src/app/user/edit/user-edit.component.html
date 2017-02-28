@@ -42,7 +42,7 @@
   <div *ngIf="user.authtype==1">
     <div class="manlab manlab-font">
       <label>Password：</label>
-      <input type="password" name="password" formControlName="password" [(ngModel)]="user.password">
+      <input type="password" name="password" formControlName="password">
     </div>
     <div *ngIf="formErrors.password" class="alert alert-danger">
       {{ formErrors.password }}

@@ -196,7 +196,7 @@
         </tr>
         <tr *ngFor="let item of domainList;let odd = odd" [ngClass]="{'tr-bj':odd}">
             <td>
-                {{item.sys_name}}
+                {{item.sysName}}
             </td>
             <td>
                 {{item.domain}}
@@ -205,10 +205,10 @@
                 {{item.service}}
             </td>
             <td>
-            {{item.sign_url}}
+            {{item.signUrl}}
             </td>
             <td>
-            {{item.logout_url}}
+            {{item.logoutUrl}}
             </td>
             <td>
               <a (click)="edit(item.id)" ><i class="icon-edit"></i></a>
