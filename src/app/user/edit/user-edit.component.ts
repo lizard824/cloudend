@@ -54,6 +54,7 @@ export class UserEditFormComponent extends ValidationComponent implements OnInit
         value: this.user.username,
         validators: {
           'required': { fn: Validators.required, error: 'Username is required.' },
+          'user': { fn: XValidator.usernameValidator(this.user.username), error: 'Username must be characters.' },
         }
       },
       'realname': {

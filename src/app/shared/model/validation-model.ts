@@ -223,4 +223,13 @@ export class XValidator {
     }
 
   }
+
+  static usernameValidator(username:string):ValidatorFn{
+    return (control: AbstractControl): { [key: string]: any } => {
+      const value = control.value;
+      if (control.value) {
+        return !control.value.match("^[a-zA-Z]*$") ? { 'user': { value } } : null;
+      }
+    }
+  }
 }
