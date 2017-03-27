@@ -123,6 +123,7 @@ export class DomainComponent extends ValidationComponent implements OnInit{
       if (res.success==true) {
         this.staticModal.hide();
         this.search('');
+        this.domainAddFormGroup.reset();
       } else {
         this.error = res.msg;
       }
